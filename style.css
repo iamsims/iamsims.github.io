@@ -1,0 +1,30 @@
+body{
+    background-color: #4d3836;
+}
+
+.title{
+    width:300px;
+    color:white;
+    position:relative;
+    top:150px;
+    margin: 0px auto; 
+    font-size: 30px;
+
+}
+
+.main{
+    width: 800px;
+    height: 100px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -400px;
+    background-color:whitesmoke;
+}
+
+table, th, td {
+    padding: 15px;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }

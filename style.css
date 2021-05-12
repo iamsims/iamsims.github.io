@@ -6,7 +6,7 @@ body {
     width: 300px;
     color: white;
     position: relative;
-    top: 150px;
+    top: 100px;
     margin: 0px auto;
     font-size: 30px;
 }
@@ -14,7 +14,7 @@ body {
 .main {
     width: 90%;
     position: fixed;
-    top: 30%;
+    top: 20%;
     left: 50%;
     margin-left: -45%;
     background-color: whitesmoke;

@@ -5,16 +5,16 @@ body {
 .title {
     width: 300px;
     color: white;
-    position: relative;
-    top: 100px;
-    margin: 0px auto;
+    position: fixed;
+    top: 5%;
+    left:40%;
     font-size: 30px;
 }
 
 .main {
     width: 90%;
     position: fixed;
-    top: 20%;
+    top: 15%;
     left: 50%;
     margin-left: -45%;
     background-color: whitesmoke;

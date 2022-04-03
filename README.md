@@ -1,3 +1,3 @@
 # iamsims.github.io
 
-This repo consists of assignments done during Leapfrog Internship.
+This repository consists of the code for my website

@@ -1,0 +1,93 @@
+baseURL: "https://simrankc.com.np"
+languageCode: en-us
+title: Simran KC
+theme: PaperMod
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: blog
+      name: Blog
+      url: /blog
+      weight: 20
+    - identifier: projects
+      name: Projects
+      url: /projects
+      weight: 30
+    - identifier: experience
+      name: Experience
+      url: /experience
+      weight: 40
+    - identifier: search
+      name: Search
+      url: /search
+      weight: 50
+
+
+params:
+  # theme
+  showToc: true
+  TocOpen: false
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  hideMeta: false
+
+  # for enchanced SEO
+  env: production
+
+  # Home Page
+  profileMode:
+    enabled: true
+    title: "Simran KC"
+    subtitle: I'm Simran KC, a dedicated developer with a strong focus on backend development. Specializing in Python programming and utilizing the FastAPI framework, I excel at building robust and scalable applications. My expertise extends to JavaScript, particularly Vue.js and other frameworks, enabling me to deliver dynamic and interactive user experiences. My versatility in both frontend and blockchain technologies allows me to approach projects holistically and collaborate effectively with multidisciplinary teams. With a passion for innovation and a commitment to staying ahead of industry trends, I aim to create impactful solutions that drive success.
+    imageUrl: "home/my-pic.jpg"
+    imageWidth: 220
+    imageHeight: 220
+    # buttons:
+    #   - name: Resume
+    #     url: ""
+
+  # List View
+  hideDescriptionInList: false
+
+  # cover image for posts
+  cover:
+    hiddenInList: false # hide on list pages and home
+    hiddenInSingle: false # hide on single page
+
+  socialIcons:
+    - name: "email"
+      url: "mailto:simrankc347@gmail.com"
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/simran-kc"
+    - name: "github"
+      url: "https://github.com/iamsims"
+    - name: "cv"
+      url: "https://drive.google.com/file/d/1UCZ-o3d61g6YYV_n8bzd-NKMga9tli9n/view"
+
+
+  # text search
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+# for search using Fuse.js
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# allow HTML in MD
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

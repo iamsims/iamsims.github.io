@@ -8,29 +8,29 @@
     <language>en-us</language><atom:link href="https://simrankc.com.np/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test blog</title>
-      <link>https://simrankc.com.np/blog/pca-visualized/</link>
+      <link>https://simrankc.com.np/blog/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://simrankc.com.np/blog/pca-visualized/</guid>
-      <description>Data compression using Principal Component Analysis (PCA)</description>
+      <guid>https://simrankc.com.np/blog/test/</guid>
+      <description>Test description</description>
     </item>
     
     <item>
-      <title>Todo List App</title>
-      <link>https://simrankc.com.np/projects/todo-list-app/</link>
+      <title>Software Engineer</title>
+      <link>https://simrankc.com.np/experience/siretotech/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://simrankc.com.np/projects/todo-list-app/</guid>
-      <description>A Todo list web application built using React</description>
+      <guid>https://simrankc.com.np/experience/siretotech/</guid>
+      <description>Sireto Technology</description>
     </item>
     
     <item>
-      <title>Software Intern</title>
-      <link>https://simrankc.com.np/experience/origin-health/</link>
+      <title>Solutions Engineer</title>
+      <link>https://simrankc.com.np/experience/logpoint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://simrankc.com.np/experience/origin-health/</guid>
-      <description>OriginHealth (Singapore)</description>
+      <guid>https://simrankc.com.np/experience/logpoint/</guid>
+      <description>Logpoint</description>
     </item>
     
     

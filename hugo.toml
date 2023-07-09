@@ -16,12 +16,6 @@ url = "/blog"
 weight = 20
 
 [[menu.main]]
-identifier = "projects"
-name = "Projects"
-url = "/projects"
-weight = 30
-
-[[menu.main]]
 identifier = "experience"
 name = "Experience"
 url = "/experience"

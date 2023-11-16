@@ -40,7 +40,7 @@ hideDescriptionInList = false
 
   [[params.socialIcons]]
   name = "email"
-  url = "mailto:simrankc347@gmail.com"
+  url = "mailto:kcsimran296@gmail.com"
 
   [[params.socialIcons]]
   name = "linkedin"
@@ -52,7 +52,7 @@ hideDescriptionInList = false
 
   [[params.socialIcons]]
   name = "cv"
-  url = "https://drive.google.com/file/d/15nz7QMy6v7rS_op-7WlIapQxVfw4bYSM/view"
+  url = "https://drive.google.com/file/d/1xo-M5kbUqupnTwfRnHLdc3LTWLMqFPXT/view"
 
   [params.fuseOpts]
   isCaseSensitive = false

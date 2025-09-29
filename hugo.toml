@@ -11,6 +11,18 @@ weight = 10
 
 
 [[menu.main]]
+identifier = "blog"
+name = "Blog"
+url = "/blog"
+weight = 20
+
+[[menu.main]]
+identifier = "projects"
+name = "Projects"
+url = "/projects"
+weight = 30
+
+[[menu.main]]
 identifier = "experience"
 name = "Experience"
 url = "/experience"
@@ -25,6 +37,11 @@ ShowCodeCopyButtons = true
 hideMeta = false
 env = "production"
 hideDescriptionInList = false
+
+  [params.social]
+  email = "kcsimran296@gmail.com"
+  linkedin = "https://www.linkedin.com/in/simran-kc"
+  github = "https://github.com/iamsims"
 
   [params.profileMode]
   enabled = true

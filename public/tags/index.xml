@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Simran KC</title>
+    <link>http://localhost:64541/tags/</link>
+    <description>Recent content in Tags on Simran KC</description>
+    <generator>Hugo -- 0.150.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Mar 2024 10:00:00 +0545</lastBuildDate>
+    <atom:link href="http://localhost:64541/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog</title>
+      <link>http://localhost:64541/tags/blog/</link>
+      <pubDate>Fri, 15 Mar 2024 10:00:00 +0545</pubDate>
+      <guid>http://localhost:64541/tags/blog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Development</title>
+      <link>http://localhost:64541/tags/development/</link>
+      <pubDate>Fri, 15 Mar 2024 10:00:00 +0545</pubDate>
+      <guid>http://localhost:64541/tags/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>http://localhost:64541/tags/hugo/</link>
+      <pubDate>Fri, 15 Mar 2024 10:00:00 +0545</pubDate>
+      <guid>http://localhost:64541/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Portfolio</title>
+      <link>http://localhost:64541/tags/portfolio/</link>
+      <pubDate>Fri, 15 Mar 2024 10:00:00 +0545</pubDate>
+      <guid>http://localhost:64541/tags/portfolio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Static-Site</title>
+      <link>http://localhost:64541/tags/static-site/</link>
+      <pubDate>Fri, 15 Mar 2024 10:00:00 +0545</pubDate>
+      <guid>http://localhost:64541/tags/static-site/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Test</title>
+      <link>http://localhost:64541/tags/test/</link>
+      <pubDate>Fri, 15 Mar 2024 10:00:00 +0545</pubDate>
+      <guid>http://localhost:64541/tags/test/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web-Development</title>
+      <link>http://localhost:64541/tags/web-development/</link>
+      <pubDate>Fri, 15 Mar 2024 10:00:00 +0545</pubDate>
+      <guid>http://localhost:64541/tags/web-development/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

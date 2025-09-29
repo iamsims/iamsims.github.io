@@ -2,6 +2,9 @@ baseURL = "https://simrankc.com.np"
 languageCode = "en-us"
 title = "Simran KC"
 theme = "PaperMod"
+canonifyURLs = true
+enableRobotsTXT = true
+enableGitInfo = true
 
 [[menu.main]]
 identifier = "home"

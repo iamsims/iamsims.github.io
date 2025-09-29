@@ -2,70 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:64541/blog/test/</loc>
-  </url><url>
-    <loc>http://localhost:64541/experience/siretotech/</loc>
-  </url><url>
-    <loc>http://localhost:64541/experience/logpoint/</loc>
-  </url><url>
-    <loc>http://localhost:64541/experience/leapfrogintern/</loc>
-  </url><url>
-    <loc>http://localhost:64541/experience/naamiresearch/</loc>
-  </url><url>
-    <loc>http://localhost:64541/blog/</loc>
+    <loc>http://localhost:1313/blog/</loc>
     <lastmod>2024-03-15T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:64541/tags/blog/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2024-03-15T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:64541/categories/</loc>
+    <loc>http://localhost:1313/tags/fastapi/</loc>
     <lastmod>2024-03-15T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:64541/tags/development/</loc>
+    <loc>http://localhost:1313/tags/full-stack/</loc>
     <lastmod>2024-03-15T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:64541/categories/general/</loc>
+    <loc>http://localhost:1313/tags/hugo/</loc>
     <lastmod>2024-03-15T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:64541/tags/hugo/</loc>
+    <loc>http://localhost:1313/tags/javascript/</loc>
     <lastmod>2024-03-15T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:64541/projects/web-portfolio/</loc>
+    <loc>http://localhost:1313/tags/portfolio/</loc>
     <lastmod>2024-03-15T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:64541/tags/portfolio/</loc>
+    <loc>http://localhost:1313/projects/</loc>
     <lastmod>2024-03-15T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:64541/projects/</loc>
+    <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2024-03-15T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:64541/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2024-03-15T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:64541/tags/static-site/</loc>
+    <loc>http://localhost:1313/tags/static-site/</loc>
     <lastmod>2024-03-15T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:64541/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-03-15T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:64541/tags/test/</loc>
+    <loc>http://localhost:1313/tags/vue.js/</loc>
     <lastmod>2024-03-15T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:64541/blog/test2/</loc>
+    <loc>http://localhost:1313/categories/web-development/</loc>
     <lastmod>2024-03-15T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:64541/categories/web-development/</loc>
+    <loc>http://localhost:1313/tags/web-development/</loc>
     <lastmod>2024-03-15T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:64541/tags/web-development/</loc>
-    <lastmod>2024-03-15T10:00:00+05:45</lastmod>
+    <loc>http://localhost:1313/tags/static-sites/</loc>
+    <lastmod>2024-03-10T10:00:00+05:45</lastmod>
   </url><url>
-    <loc>http://localhost:64541/experience/mutualart/</loc>
+    <loc>http://localhost:1313/tags/award/</loc>
   </url><url>
-    <loc>http://localhost:64541/experience/nasaimpact/</loc>
+    <loc>http://localhost:1313/tags/aws/</loc>
   </url><url>
-    <loc>http://localhost:64541/experience/</loc>
+    <loc>http://localhost:1313/tags/blockchain/</loc>
   </url><url>
-    <loc>http://localhost:64541/search/</loc>
+    <loc>http://localhost:1313/tags/certification/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/cloud/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/collaboration/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/hackathon/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/innovation/</loc>
+  </url><url>
+    <loc>http://localhost:1313/others/</loc>
+  </url><url>
+    <loc>http://localhost:1313/experience/</loc>
+  </url><url>
+    <loc>http://localhost:1313/search/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/websocket/</loc>
   </url>
 </urlset>

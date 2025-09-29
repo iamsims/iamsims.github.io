@@ -8,6 +8,10 @@ categories: ["Web Development"]
 github: "https://github.com/iamsims/iamsims.github.io"
 demo: "https://simrankc.com.np"
 tech: ["Hugo", "PaperMod Theme", "GitHub Pages", "HTML/CSS", "Markdown"]
+unlisted: true
+build:
+  list: false
+  render: true
 ---
 
 # Personal Portfolio Website

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Building Modern Web Applications with FastAPI and Vue.js | Simran KC</title>
+<meta name="keywords" content="FastAPI, Vue.js, Python, JavaScript, Web Development, Full Stack">
+<meta name="description" content="A comprehensive guide to modern web development using Python FastAPI for backend and Vue.js for frontend development">
+<meta name="author" content="Simran KC">
+<link rel="canonical" href="http://localhost:1313/blog/modern-web-development/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.85c6ff9febe222f48442e0cb94ce3a9364c6644d81b68becf905357336901553.css" integrity="sha256-hcb/n&#43;viIvSEQuDLlM46k2TGZE2Btovs&#43;QU1czaQFVM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/blog/modern-web-development/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/blog/modern-web-development/">
+  <meta property="og:site_name" content="Simran KC">
+  <meta property="og:title" content="Building Modern Web Applications with FastAPI and Vue.js">
+  <meta property="og:description" content="A comprehensive guide to modern web development using Python FastAPI for backend and Vue.js for frontend development">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-03-15T10:00:00+05:45">
+    <meta property="article:modified_time" content="2024-03-15T10:00:00+05:45">
+    <meta property="article:tag" content="FastAPI">
+    <meta property="article:tag" content="Vue.js">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="Web-Development">
+    <meta property="article:tag" content="Full Stack">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Building Modern Web Applications with FastAPI and Vue.js">
+<meta name="twitter:description" content="A comprehensive guide to modern web development using Python FastAPI for backend and Vue.js for frontend development">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blog",
+      "item": "http://localhost:1313/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Building Modern Web Applications with FastAPI and Vue.js",
+      "item": "http://localhost:1313/blog/modern-web-development/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Building Modern Web Applications with FastAPI and Vue.js",
+  "name": "Building Modern Web Applications with FastAPI and Vue.js",
+  "description": "A comprehensive guide to modern web development using Python FastAPI for backend and Vue.js for frontend development",
+  "keywords": [
+    "FastAPI", "Vue.js", "Python", "JavaScript", "Web Development", "Full Stack"
+  ],
+  "articleBody": "Building Modern Web Applications with FastAPI and Vue.js In today’s rapidly evolving web development landscape, choosing the right technology stack is crucial for building scalable, maintainable, and high-performance applications. In this post, I’ll share my experience and insights on building modern web applications using FastAPI for the backend and Vue.js for the frontend.\nWhy FastAPI and Vue.js? FastAPI: The Modern Python Web Framework FastAPI has quickly become my go-to choice for backend development, and here’s why:\nHigh Performance: One of the fastest Python frameworks available Automatic API Documentation: Built-in Swagger UI and ReDoc generation Type Safety: Full support for Python type hints Async Support: Native async/await support for better concurrency Easy Testing: Simple and comprehensive testing capabilities Vue.js: The Progressive JavaScript Framework Vue.js offers the perfect balance between simplicity and power:\nGentle Learning Curve: Easy to learn and integrate Reactive Data Binding: Efficient two-way data binding Component-Based Architecture: Reusable and maintainable components Excellent Ecosystem: Rich ecosystem with Vue Router, Vuex, and more Performance: Optimized virtual DOM implementation Architecture Overview Here’s how I typically structure a modern web application:\n├── backend/ │ ├── app/ │ │ ├── api/ │ │ ├── core/ │ │ ├── models/ │ │ └── services/ │ ├── requirements.txt │ └── main.py ├── frontend/ │ ├── src/ │ │ ├── components/ │ │ ├── views/ │ │ ├── store/ │ │ └── router/ │ ├── package.json │ └── vue.config.js └── docker-compose.yml Backend Development with FastAPI Setting Up FastAPI First, let’s create a basic FastAPI application:\n# main.py from fastapi import FastAPI from fastapi.middleware.cors import CORSMiddleware app = FastAPI( title=\"Modern Web API\", description=\"A modern web API built with FastAPI\", version=\"1.0.0\" ) # Enable CORS for frontend communication app.add_middleware( CORSMiddleware, allow_origins=[\"http://localhost:3000\"], allow_credentials=True, allow_methods=[\"*\"], allow_headers=[\"*\"], ) @app.get(\"/\") async def root(): return {\"message\": \"Welcome to the Modern Web API\"} @app.get(\"/api/health\") async def health_check(): return {\"status\": \"healthy\"} Database Integration For database operations, I prefer using SQLAlchemy with async support:\n# models/user.py from sqlalchemy import Column, Integer, String, DateTime from sqlalchemy.ext.declarative import declarative_base from datetime import datetime Base = declarative_base() class User(Base): __tablename__ = \"users\" id = Column(Integer, primary_key=True, index=True) username = Column(String, unique=True, index=True) email = Column(String, unique=True, index=True) created_at = Column(DateTime, default=datetime.utcnow) API Endpoints Creating RESTful endpoints is straightforward with FastAPI:\n# api/users.py from fastapi import APIRouter, Depends, HTTPException from sqlalchemy.orm import Session from typing import List router = APIRouter(prefix=\"/api/users\", tags=[\"users\"]) @router.get(\"/\", response_model=List[UserResponse]) async def get_users(db: Session = Depends(get_db)): users = db.query(User).all() return users @router.post(\"/\", response_model=UserResponse) async def create_user(user: UserCreate, db: Session = Depends(get_db)): db_user = User(**user.dict()) db.add(db_user) db.commit() db.refresh(db_user) return db_user Frontend Development with Vue.js Setting Up Vue.js Project # Create a new Vue.js project npm create vue@latest frontend cd frontend npm install # Additional packages I typically use npm install axios pinia vue-router@4 Vue.js Component Structure Here’s a typical component structure I use:\n\u003ctemplate\u003e \u003cdiv class=\"user-list\"\u003e \u003ch2\u003eUsers\u003c/h2\u003e \u003cdiv v-if=\"loading\" class=\"loading\"\u003eLoading users...\u003c/div\u003e \u003cdiv v-else\u003e \u003cdiv v-for=\"user in users\" :key=\"user.id\" class=\"user-card\" \u003e \u003ch3\u003e{{ user.username }}\u003c/h3\u003e \u003cp\u003e{{ user.email }}\u003c/p\u003e \u003csmall\u003e{{ formatDate(user.created_at) }}\u003c/small\u003e \u003c/div\u003e \u003c/div\u003e \u003c/div\u003e \u003c/template\u003e \u003cscript setup\u003e import { ref, onMounted } from 'vue' import { userService } from '@/services/userService' const users = ref([]) const loading = ref(true) const fetchUsers = async () =\u003e { try { loading.value = true users.value = await userService.getUsers() } catch (error) { console.error('Error fetching users:', error) } finally { loading.value = false } } const formatDate = (date) =\u003e { return new Date(date).toLocaleDateString() } onMounted(() =\u003e { fetchUsers() }) \u003c/script\u003e \u003cstyle scoped\u003e .user-list { max-width: 800px; margin: 0 auto; padding: 2rem; } .user-card { background: #f8f9fa; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; border-left: 4px solid #007bff; } \u003c/style\u003e State Management with Pinia For state management, I use Pinia (the successor to Vuex):\n// stores/userStore.js import { defineStore } from 'pinia' import { userService } from '@/services/userService' export const useUserStore = defineStore('user', { state: () =\u003e ({ users: [], currentUser: null, loading: false }), getters: { getUserById: (state) =\u003e (id) =\u003e { return state.users.find(user =\u003e user.id === id) } }, actions: { async fetchUsers() { this.loading = true try { this.users = await userService.getUsers() } catch (error) { console.error('Error fetching users:', error) } finally { this.loading = false } }, async createUser(userData) { try { const newUser = await userService.createUser(userData) this.users.push(newUser) return newUser } catch (error) { console.error('Error creating user:', error) throw error } } } }) Authentication and Security JWT Authentication For secure authentication, I implement JWT tokens:\n# Backend: auth.py from fastapi import Depends, HTTPException, status from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials import jwt from datetime import datetime, timedelta security = HTTPBearer() def create_access_token(data: dict): to_encode = data.copy() expire = datetime.utcnow() + timedelta(minutes=30) to_encode.update({\"exp\": expire}) return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM) async def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security)): try: payload = jwt.decode(credentials.credentials, SECRET_KEY, algorithms=[ALGORITHM]) username: str = payload.get(\"sub\") if username is None: raise HTTPException(status_code=401, detail=\"Invalid token\") return username except jwt.PyJWTError: raise HTTPException(status_code=401, detail=\"Invalid token\") Deployment and DevOps Docker Configuration I use Docker for consistent development and deployment:\n# Dockerfile for FastAPI FROM python:3.11-slim WORKDIR /app COPY requirements.txt . RUN pip install --no-cache-dir -r requirements.txt COPY . . EXPOSE 8000 CMD [\"uvicorn\", \"main:app\", \"--host\", \"0.0.0.0\", \"--port\", \"8000\"] # Dockerfile for Vue.js FROM node:18-alpine as build-stage WORKDIR /app COPY package*.json ./ RUN npm install COPY . . RUN npm run build FROM nginx:alpine as production-stage COPY --from=build-stage /app/dist /usr/share/nginx/html EXPOSE 80 CMD [\"nginx\", \"-g\", \"daemon off;\"] Best Practices and Tips 1. API Design Use consistent naming conventions Implement proper error handling Add comprehensive logging Use response models for type safety 2. Frontend Architecture Keep components small and focused Use composition API for better code organization Implement proper error boundaries Optimize for performance with lazy loading 3. Testing Write unit tests for both backend and frontend Use pytest for FastAPI testing Use Vitest for Vue.js testing Implement integration tests 4. Performance Optimization Use Redis for caching frequently accessed data Implement database indexing Use Vue.js built-in optimizations Consider implementing a CDN for static assets Conclusion The combination of FastAPI and Vue.js provides a powerful, modern stack for building web applications. FastAPI’s automatic documentation, type safety, and performance make it ideal for building robust APIs, while Vue.js’s simplicity and reactivity create excellent user experiences.\nKey takeaways:\nFastAPI offers excellent developer experience with automatic documentation Vue.js provides a gentle learning curve with powerful features Proper architecture and state management are crucial for scalability Security should be built-in from the start Docker and proper DevOps practices ensure smooth deployment This stack has served me well in various projects, from small personal applications to enterprise-level systems. The combination of Python’s ecosystem with JavaScript’s frontend capabilities creates a versatile and productive development environment.\nWhat’s your experience with modern web development stacks? Feel free to reach out and share your thoughts!\n",
+  "wordCount" : "1106",
+  "inLanguage": "en",
+  "datePublished": "2024-03-15T10:00:00+05:45",
+  "dateModified": "2024-03-15T10:00:00+05:45",
+  "author":{
+    "@type": "Person",
+    "name": "Simran KC"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/blog/modern-web-development/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Simran KC",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header sticky-header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Simran KC (Alt + H)">Simran KC</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/blog" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/experience" title="Experience">
+                    <span>Experience</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/others" title="Others">
+                    <span>Others</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/blog/">Blog</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Building Modern Web Applications with FastAPI and Vue.js
+    </h1>
+    <div class="post-description">
+      A comprehensive guide to modern web development using Python FastAPI for backend and Vue.js for frontend development
+    </div>
+    <div class="post-meta">
+
+Simran KC
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">‎ Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#building-modern-web-applications-with-fastapi-and-vuejs" aria-label="Building Modern Web Applications with FastAPI and Vue.js">Building Modern Web Applications with FastAPI and Vue.js</a><ul>
+                        
+                <li>
+                    <a href="#why-fastapi-and-vuejs" aria-label="Why FastAPI and Vue.js?">Why FastAPI and Vue.js?</a><ul>
+                        
+                <li>
+                    <a href="#fastapi-the-modern-python-web-framework" aria-label="FastAPI: The Modern Python Web Framework">FastAPI: The Modern Python Web Framework</a></li>
+                <li>
+                    <a href="#vuejs-the-progressive-javascript-framework" aria-label="Vue.js: The Progressive JavaScript Framework">Vue.js: The Progressive JavaScript Framework</a></li></ul>
+                </li>
+                <li>
+                    <a href="#architecture-overview" aria-label="Architecture Overview">Architecture Overview</a></li>
+                <li>
+                    <a href="#backend-development-with-fastapi" aria-label="Backend Development with FastAPI">Backend Development with FastAPI</a><ul>
+                        
+                <li>
+                    <a href="#setting-up-fastapi" aria-label="Setting Up FastAPI">Setting Up FastAPI</a></li>
+                <li>
+                    <a href="#database-integration" aria-label="Database Integration">Database Integration</a></li>
+                <li>
+                    <a href="#api-endpoints" aria-label="API Endpoints">API Endpoints</a></li></ul>
+                </li>
+                <li>
+                    <a href="#frontend-development-with-vuejs" aria-label="Frontend Development with Vue.js">Frontend Development with Vue.js</a><ul>
+                        
+                <li>
+                    <a href="#setting-up-vuejs-project" aria-label="Setting Up Vue.js Project">Setting Up Vue.js Project</a></li>
+                <li>
+                    <a href="#vuejs-component-structure" aria-label="Vue.js Component Structure">Vue.js Component Structure</a></li>
+                <li>
+                    <a href="#state-management-with-pinia" aria-label="State Management with Pinia">State Management with Pinia</a></li></ul>
+                </li>
+                <li>
+                    <a href="#authentication-and-security" aria-label="Authentication and Security">Authentication and Security</a><ul>
+                        
+                <li>
+                    <a href="#jwt-authentication" aria-label="JWT Authentication">JWT Authentication</a></li></ul>
+                </li>
+                <li>
+                    <a href="#deployment-and-devops" aria-label="Deployment and DevOps">Deployment and DevOps</a><ul>
+                        
+                <li>
+                    <a href="#docker-configuration" aria-label="Docker Configuration">Docker Configuration</a></li></ul>
+                </li>
+                <li>
+                    <a href="#best-practices-and-tips" aria-label="Best Practices and Tips">Best Practices and Tips</a><ul>
+                        
+                <li>
+                    <a href="#1-api-design" aria-label="1. API Design">1. API Design</a></li>
+                <li>
+                    <a href="#2-frontend-architecture" aria-label="2. Frontend Architecture">2. Frontend Architecture</a></li>
+                <li>
+                    <a href="#3-testing" aria-label="3. Testing">3. Testing</a></li>
+                <li>
+                    <a href="#4-performance-optimization" aria-label="4. Performance Optimization">4. Performance Optimization</a></li></ul>
+                </li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="building-modern-web-applications-with-fastapi-and-vuejs">Building Modern Web Applications with FastAPI and Vue.js<a hidden class="anchor" aria-hidden="true" href="#building-modern-web-applications-with-fastapi-and-vuejs">#</a></h1>
+<p>In today&rsquo;s rapidly evolving web development landscape, choosing the right technology stack is crucial for building scalable, maintainable, and high-performance applications. In this post, I&rsquo;ll share my experience and insights on building modern web applications using <strong>FastAPI</strong> for the backend and <strong>Vue.js</strong> for the frontend.</p>
+<h2 id="why-fastapi-and-vuejs">Why FastAPI and Vue.js?<a hidden class="anchor" aria-hidden="true" href="#why-fastapi-and-vuejs">#</a></h2>
+<h3 id="fastapi-the-modern-python-web-framework">FastAPI: The Modern Python Web Framework<a hidden class="anchor" aria-hidden="true" href="#fastapi-the-modern-python-web-framework">#</a></h3>
+<p>FastAPI has quickly become my go-to choice for backend development, and here&rsquo;s why:</p>
+<ul>
+<li><strong>High Performance</strong>: One of the fastest Python frameworks available</li>
+<li><strong>Automatic API Documentation</strong>: Built-in Swagger UI and ReDoc generation</li>
+<li><strong>Type Safety</strong>: Full support for Python type hints</li>
+<li><strong>Async Support</strong>: Native async/await support for better concurrency</li>
+<li><strong>Easy Testing</strong>: Simple and comprehensive testing capabilities</li>
+</ul>
+<h3 id="vuejs-the-progressive-javascript-framework">Vue.js: The Progressive JavaScript Framework<a hidden class="anchor" aria-hidden="true" href="#vuejs-the-progressive-javascript-framework">#</a></h3>
+<p>Vue.js offers the perfect balance between simplicity and power:</p>
+<ul>
+<li><strong>Gentle Learning Curve</strong>: Easy to learn and integrate</li>
+<li><strong>Reactive Data Binding</strong>: Efficient two-way data binding</li>
+<li><strong>Component-Based Architecture</strong>: Reusable and maintainable components</li>
+<li><strong>Excellent Ecosystem</strong>: Rich ecosystem with Vue Router, Vuex, and more</li>
+<li><strong>Performance</strong>: Optimized virtual DOM implementation</li>
+</ul>
+<h2 id="architecture-overview">Architecture Overview<a hidden class="anchor" aria-hidden="true" href="#architecture-overview">#</a></h2>
+<p>Here&rsquo;s how I typically structure a modern web application:</p>
+<pre tabindex="0"><code>├── backend/
+│   ├── app/
+│   │   ├── api/
+│   │   ├── core/
+│   │   ├── models/
+│   │   └── services/
+│   ├── requirements.txt
+│   └── main.py
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── views/
+│   │   ├── store/
+│   │   └── router/
+│   ├── package.json
+│   └── vue.config.js
+└── docker-compose.yml
+</code></pre><h2 id="backend-development-with-fastapi">Backend Development with FastAPI<a hidden class="anchor" aria-hidden="true" href="#backend-development-with-fastapi">#</a></h2>
+<h3 id="setting-up-fastapi">Setting Up FastAPI<a hidden class="anchor" aria-hidden="true" href="#setting-up-fastapi">#</a></h3>
+<p>First, let&rsquo;s create a basic FastAPI application:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># main.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> fastapi <span style="color:#f92672">import</span> FastAPI
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> fastapi.middleware.cors <span style="color:#f92672">import</span> CORSMiddleware
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> FastAPI(
+</span></span><span style="display:flex;"><span>    title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Modern Web API&#34;</span>,
+</span></span><span style="display:flex;"><span>    description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;A modern web API built with FastAPI&#34;</span>,
+</span></span><span style="display:flex;"><span>    version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0.0&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enable CORS for frontend communication</span>
+</span></span><span style="display:flex;"><span>app<span style="color:#f92672">.</span>add_middleware(
+</span></span><span style="display:flex;"><span>    CORSMiddleware,
+</span></span><span style="display:flex;"><span>    allow_origins<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;http://localhost:3000&#34;</span>],
+</span></span><span style="display:flex;"><span>    allow_credentials<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>    allow_methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;*&#34;</span>],
+</span></span><span style="display:flex;"><span>    allow_headers<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;*&#34;</span>],
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.get</span>(<span style="color:#e6db74">&#34;/&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">root</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Welcome to the Modern Web API&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.get</span>(<span style="color:#e6db74">&#34;/api/health&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">health_check</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;healthy&#34;</span>}
+</span></span></code></pre></div><h3 id="database-integration">Database Integration<a hidden class="anchor" aria-hidden="true" href="#database-integration">#</a></h3>
+<p>For database operations, I prefer using SQLAlchemy with async support:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># models/user.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> Column, Integer, String, DateTime
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.ext.declarative <span style="color:#f92672">import</span> declarative_base
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Base <span style="color:#f92672">=</span> declarative_base()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span>(Base):
+</span></span><span style="display:flex;"><span>    __tablename__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;users&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    id <span style="color:#f92672">=</span> Column(Integer, primary_key<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    username <span style="color:#f92672">=</span> Column(String, unique<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    email <span style="color:#f92672">=</span> Column(String, unique<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    created_at <span style="color:#f92672">=</span> Column(DateTime, default<span style="color:#f92672">=</span>datetime<span style="color:#f92672">.</span>utcnow)
+</span></span></code></pre></div><h3 id="api-endpoints">API Endpoints<a hidden class="anchor" aria-hidden="true" href="#api-endpoints">#</a></h3>
+<p>Creating RESTful endpoints is straightforward with FastAPI:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># api/users.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> fastapi <span style="color:#f92672">import</span> APIRouter, Depends, HTTPException
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sqlalchemy.orm <span style="color:#f92672">import</span> Session
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> List
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>router <span style="color:#f92672">=</span> APIRouter(prefix<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/api/users&#34;</span>, tags<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;users&#34;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@router.get</span>(<span style="color:#e6db74">&#34;/&#34;</span>, response_model<span style="color:#f92672">=</span>List[UserResponse])
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_users</span>(db: Session <span style="color:#f92672">=</span> Depends(get_db)):
+</span></span><span style="display:flex;"><span>    users <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>query(User)<span style="color:#f92672">.</span>all()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> users
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@router.post</span>(<span style="color:#e6db74">&#34;/&#34;</span>, response_model<span style="color:#f92672">=</span>UserResponse)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_user</span>(user: UserCreate, db: Session <span style="color:#f92672">=</span> Depends(get_db)):
+</span></span><span style="display:flex;"><span>    db_user <span style="color:#f92672">=</span> User(<span style="color:#f92672">**</span>user<span style="color:#f92672">.</span>dict())
+</span></span><span style="display:flex;"><span>    db<span style="color:#f92672">.</span>add(db_user)
+</span></span><span style="display:flex;"><span>    db<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span>    db<span style="color:#f92672">.</span>refresh(db_user)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> db_user
+</span></span></code></pre></div><h2 id="frontend-development-with-vuejs">Frontend Development with Vue.js<a hidden class="anchor" aria-hidden="true" href="#frontend-development-with-vuejs">#</a></h2>
+<h3 id="setting-up-vuejs-project">Setting Up Vue.js Project<a hidden class="anchor" aria-hidden="true" href="#setting-up-vuejs-project">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create a new Vue.js project</span>
+</span></span><span style="display:flex;"><span>npm create vue@latest frontend
+</span></span><span style="display:flex;"><span>cd frontend
+</span></span><span style="display:flex;"><span>npm install
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Additional packages I typically use</span>
+</span></span><span style="display:flex;"><span>npm install axios pinia vue-router@4
+</span></span></code></pre></div><h3 id="vuejs-component-structure">Vue.js Component Structure<a hidden class="anchor" aria-hidden="true" href="#vuejs-component-structure">#</a></h3>
+<p>Here&rsquo;s a typical component structure I use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">components</span><span style="color:#f92672">/</span><span style="color:#a6e22e">UserList</span>.<span style="color:#a6e22e">vue</span> <span style="color:#f92672">--&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;user-list&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h2</span>&gt;<span style="color:#a6e22e">Users</span>&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#f92672">v-if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;loading&#34; class=&#34;loading&#34;</span>&gt;<span style="color:#a6e22e">Loading</span> <span style="color:#a6e22e">users...</span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#f92672">v-else</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">v-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;user in users&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">:key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;user.id&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;user-card&#34;</span>
+</span></span><span style="display:flex;"><span>      &gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h3</span>&gt;{{ <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">username</span> }}&lt;/<span style="color:#f92672">h3</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span>&gt;{{ <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">email</span> }}&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">small</span>&gt;{{ <span style="color:#a6e22e">formatDate</span>(<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">created_at</span>) }}&lt;/<span style="color:#f92672">small</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">setup</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">ref</span>, <span style="color:#a6e22e">onMounted</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">userService</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/services/userService&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">users</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ref</span>([])
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">loading</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ref</span>(<span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fetchUsers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">loading</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">users</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">userService</span>.<span style="color:#a6e22e">getUsers</span>()
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;Error fetching users:&#39;</span>, <span style="color:#a6e22e">error</span>)
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">finally</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">loading</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formatDate</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">date</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">date</span>).<span style="color:#a6e22e">toLocaleDateString</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">onMounted</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fetchUsers</span>()
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">scoped</span>&gt;
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">user</span><span style="color:#f92672">-</span><span style="color:#a6e22e">list</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">max</span><span style="color:#f92672">-</span><span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">800</span><span style="color:#a6e22e">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">margin</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> <span style="color:#a6e22e">auto</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">padding</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span><span style="color:#a6e22e">rem</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">user</span><span style="color:#f92672">-</span><span style="color:#a6e22e">card</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span><span style="color:#f92672">:</span> <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">f8f9fa</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">border</span><span style="color:#f92672">-</span><span style="color:#a6e22e">radius</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">8</span><span style="color:#a6e22e">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">padding</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span><span style="color:#a6e22e">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">margin</span><span style="color:#f92672">-</span><span style="color:#a6e22e">bottom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span><span style="color:#a6e22e">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">border</span><span style="color:#f92672">-</span><span style="color:#a6e22e">left</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">4</span><span style="color:#a6e22e">px</span> <span style="color:#a6e22e">solid</span> <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">007</span><span style="color:#a6e22e">bff</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span></code></pre></div><h3 id="state-management-with-pinia">State Management with Pinia<a hidden class="anchor" aria-hidden="true" href="#state-management-with-pinia">#</a></h3>
+<p>For state management, I use Pinia (the successor to Vuex):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// stores/userStore.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">defineStore</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;pinia&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">userService</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/services/userService&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">useUserStore</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defineStore</span>(<span style="color:#e6db74">&#39;user&#39;</span>, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">state</span><span style="color:#f92672">:</span> () =&gt; ({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">users</span><span style="color:#f92672">:</span> [],
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">currentUser</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">loading</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  }),
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">getters</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">getUserById</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">state</span>) =&gt; (<span style="color:#a6e22e">id</span>) =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">users</span>.<span style="color:#a6e22e">find</span>(<span style="color:#a6e22e">user</span> =&gt; <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">id</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">actions</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">fetchUsers</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">loading</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">users</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">userService</span>.<span style="color:#a6e22e">getUsers</span>()
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;Error fetching users:&#39;</span>, <span style="color:#a6e22e">error</span>)
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">finally</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">loading</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">createUser</span>(<span style="color:#a6e22e">userData</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newUser</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">userService</span>.<span style="color:#a6e22e">createUser</span>(<span style="color:#a6e22e">userData</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">users</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">newUser</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newUser</span>
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;Error creating user:&#39;</span>, <span style="color:#a6e22e">error</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">error</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><h2 id="authentication-and-security">Authentication and Security<a hidden class="anchor" aria-hidden="true" href="#authentication-and-security">#</a></h2>
+<h3 id="jwt-authentication">JWT Authentication<a hidden class="anchor" aria-hidden="true" href="#jwt-authentication">#</a></h3>
+<p>For secure authentication, I implement JWT tokens:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Backend: auth.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> fastapi <span style="color:#f92672">import</span> Depends, HTTPException, status
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> fastapi.security <span style="color:#f92672">import</span> HTTPBearer, HTTPAuthorizationCredentials
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> jwt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime, timedelta
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>security <span style="color:#f92672">=</span> HTTPBearer()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_access_token</span>(data: dict):
+</span></span><span style="display:flex;"><span>    to_encode <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>copy()
+</span></span><span style="display:flex;"><span>    expire <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>utcnow() <span style="color:#f92672">+</span> timedelta(minutes<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>)
+</span></span><span style="display:flex;"><span>    to_encode<span style="color:#f92672">.</span>update({<span style="color:#e6db74">&#34;exp&#34;</span>: expire})
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> jwt<span style="color:#f92672">.</span>encode(to_encode, SECRET_KEY, algorithm<span style="color:#f92672">=</span>ALGORITHM)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_current_user</span>(credentials: HTTPAuthorizationCredentials <span style="color:#f92672">=</span> Depends(security)):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        payload <span style="color:#f92672">=</span> jwt<span style="color:#f92672">.</span>decode(credentials<span style="color:#f92672">.</span>credentials, SECRET_KEY, algorithms<span style="color:#f92672">=</span>[ALGORITHM])
+</span></span><span style="display:flex;"><span>        username: str <span style="color:#f92672">=</span> payload<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;sub&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> username <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> HTTPException(status_code<span style="color:#f92672">=</span><span style="color:#ae81ff">401</span>, detail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Invalid token&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> username
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> jwt<span style="color:#f92672">.</span>PyJWTError:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> HTTPException(status_code<span style="color:#f92672">=</span><span style="color:#ae81ff">401</span>, detail<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Invalid token&#34;</span>)
+</span></span></code></pre></div><h2 id="deployment-and-devops">Deployment and DevOps<a hidden class="anchor" aria-hidden="true" href="#deployment-and-devops">#</a></h2>
+<h3 id="docker-configuration">Docker Configuration<a hidden class="anchor" aria-hidden="true" href="#docker-configuration">#</a></h3>
+<p>I use Docker for consistent development and deployment:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#75715e"># Dockerfile for FastAPI</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">python:3.11-slim</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span> <span style="color:#e6db74">/app</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> requirements.txt .<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install --no-cache-dir -r requirements.txt<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span> <span style="color:#e6db74">8000</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;uvicorn&#34;</span>, <span style="color:#e6db74">&#34;main:app&#34;</span>, <span style="color:#e6db74">&#34;--host&#34;</span>, <span style="color:#e6db74">&#34;0.0.0.0&#34;</span>, <span style="color:#e6db74">&#34;--port&#34;</span>, <span style="color:#e6db74">&#34;8000&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#75715e"># Dockerfile for Vue.js</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">node:18-alpine</span> <span style="color:#66d9ef">as</span> <span style="color:#e6db74">build-stage</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span> <span style="color:#e6db74">/app</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> package*.json ./<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> npm install<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> npm run build<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">nginx:alpine</span> <span style="color:#66d9ef">as</span> <span style="color:#e6db74">production-stage</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>build-stage /app/dist /usr/share/nginx/html<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span> <span style="color:#e6db74">80</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;nginx&#34;</span>, <span style="color:#e6db74">&#34;-g&#34;</span>, <span style="color:#e6db74">&#34;daemon off;&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="best-practices-and-tips">Best Practices and Tips<a hidden class="anchor" aria-hidden="true" href="#best-practices-and-tips">#</a></h2>
+<h3 id="1-api-design">1. API Design<a hidden class="anchor" aria-hidden="true" href="#1-api-design">#</a></h3>
+<ul>
+<li>Use consistent naming conventions</li>
+<li>Implement proper error handling</li>
+<li>Add comprehensive logging</li>
+<li>Use response models for type safety</li>
+</ul>
+<h3 id="2-frontend-architecture">2. Frontend Architecture<a hidden class="anchor" aria-hidden="true" href="#2-frontend-architecture">#</a></h3>
+<ul>
+<li>Keep components small and focused</li>
+<li>Use composition API for better code organization</li>
+<li>Implement proper error boundaries</li>
+<li>Optimize for performance with lazy loading</li>
+</ul>
+<h3 id="3-testing">3. Testing<a hidden class="anchor" aria-hidden="true" href="#3-testing">#</a></h3>
+<ul>
+<li>Write unit tests for both backend and frontend</li>
+<li>Use pytest for FastAPI testing</li>
+<li>Use Vitest for Vue.js testing</li>
+<li>Implement integration tests</li>
+</ul>
+<h3 id="4-performance-optimization">4. Performance Optimization<a hidden class="anchor" aria-hidden="true" href="#4-performance-optimization">#</a></h3>
+<ul>
+<li>Use Redis for caching frequently accessed data</li>
+<li>Implement database indexing</li>
+<li>Use Vue.js built-in optimizations</li>
+<li>Consider implementing a CDN for static assets</li>
+</ul>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>The combination of FastAPI and Vue.js provides a powerful, modern stack for building web applications. FastAPI&rsquo;s automatic documentation, type safety, and performance make it ideal for building robust APIs, while Vue.js&rsquo;s simplicity and reactivity create excellent user experiences.</p>
+<p>Key takeaways:</p>
+<ul>
+<li>FastAPI offers excellent developer experience with automatic documentation</li>
+<li>Vue.js provides a gentle learning curve with powerful features</li>
+<li>Proper architecture and state management are crucial for scalability</li>
+<li>Security should be built-in from the start</li>
+<li>Docker and proper DevOps practices ensure smooth deployment</li>
+</ul>
+<p>This stack has served me well in various projects, from small personal applications to enterprise-level systems. The combination of Python&rsquo;s ecosystem with JavaScript&rsquo;s frontend capabilities creates a versatile and productive development environment.</p>
+<hr>
+<p><em>What&rsquo;s your experience with modern web development stacks? Feel free to reach out and share your thoughts!</em></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/fastapi/">FastAPI</a></li>
+      <li><a href="http://localhost:1313/tags/vue.js/">Vue.js</a></li>
+      <li><a href="http://localhost:1313/tags/python/">Python</a></li>
+      <li><a href="http://localhost:1313/tags/javascript/">JavaScript</a></li>
+      <li><a href="http://localhost:1313/tags/web-development/">Web-Development</a></li>
+      <li><a href="http://localhost:1313/tags/full-stack/">Full Stack</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2025 <a href="http://localhost:1313/">Simran KC</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

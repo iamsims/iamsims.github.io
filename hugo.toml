@@ -9,7 +9,6 @@ name = "Home"
 url = "/"
 weight = 10
 
-
 [[menu.main]]
 identifier = "blog"
 name = "Blog"
@@ -28,6 +27,12 @@ name = "Experience"
 url = "/experience"
 weight = 40
 
+[[menu.main]]
+identifier = "others"
+name = "Others"
+url = "/others"
+weight = 50
+
 
 [params]
 showToc = true
@@ -37,6 +42,7 @@ ShowCodeCopyButtons = true
 hideMeta = false
 env = "production"
 hideDescriptionInList = false
+defaultTheme = "light"
 
   [params.social]
   email = "kcsimran296@gmail.com"

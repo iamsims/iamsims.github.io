@@ -6,6 +6,10 @@ draft: false
 tags: []
 showToc: false
 weight: 301
+unlisted: true
+build:
+  list: false
+  render: true
 --- 
 ## Description
 

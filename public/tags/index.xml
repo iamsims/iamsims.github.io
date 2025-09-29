@@ -2,59 +2,143 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Simran KC</title>
-    <link>http://localhost:64541/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Simran KC</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 15 Mar 2024 10:00:00 +0545</lastBuildDate>
-    <atom:link href="http://localhost:64541/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Blog</title>
-      <link>http://localhost:64541/tags/blog/</link>
+      <title>FastAPI</title>
+      <link>http://localhost:1313/tags/fastapi/</link>
       <pubDate>Fri, 15 Mar 2024 10:00:00 +0545</pubDate>
-      <guid>http://localhost:64541/tags/blog/</guid>
+      <guid>http://localhost:1313/tags/fastapi/</guid>
       <description></description>
     </item>
     <item>
-      <title>Development</title>
-      <link>http://localhost:64541/tags/development/</link>
+      <title>Full Stack</title>
+      <link>http://localhost:1313/tags/full-stack/</link>
       <pubDate>Fri, 15 Mar 2024 10:00:00 +0545</pubDate>
-      <guid>http://localhost:64541/tags/development/</guid>
+      <guid>http://localhost:1313/tags/full-stack/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>http://localhost:64541/tags/hugo/</link>
+      <link>http://localhost:1313/tags/hugo/</link>
       <pubDate>Fri, 15 Mar 2024 10:00:00 +0545</pubDate>
-      <guid>http://localhost:64541/tags/hugo/</guid>
+      <guid>http://localhost:1313/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JavaScript</title>
+      <link>http://localhost:1313/tags/javascript/</link>
+      <pubDate>Fri, 15 Mar 2024 10:00:00 +0545</pubDate>
+      <guid>http://localhost:1313/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>Portfolio</title>
-      <link>http://localhost:64541/tags/portfolio/</link>
+      <link>http://localhost:1313/tags/portfolio/</link>
       <pubDate>Fri, 15 Mar 2024 10:00:00 +0545</pubDate>
-      <guid>http://localhost:64541/tags/portfolio/</guid>
+      <guid>http://localhost:1313/tags/portfolio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Fri, 15 Mar 2024 10:00:00 +0545</pubDate>
+      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Static-Site</title>
-      <link>http://localhost:64541/tags/static-site/</link>
+      <link>http://localhost:1313/tags/static-site/</link>
       <pubDate>Fri, 15 Mar 2024 10:00:00 +0545</pubDate>
-      <guid>http://localhost:64541/tags/static-site/</guid>
+      <guid>http://localhost:1313/tags/static-site/</guid>
       <description></description>
     </item>
     <item>
-      <title>Test</title>
-      <link>http://localhost:64541/tags/test/</link>
+      <title>Vue.js</title>
+      <link>http://localhost:1313/tags/vue.js/</link>
       <pubDate>Fri, 15 Mar 2024 10:00:00 +0545</pubDate>
-      <guid>http://localhost:64541/tags/test/</guid>
+      <guid>http://localhost:1313/tags/vue.js/</guid>
       <description></description>
     </item>
     <item>
       <title>Web-Development</title>
-      <link>http://localhost:64541/tags/web-development/</link>
+      <link>http://localhost:1313/tags/web-development/</link>
       <pubDate>Fri, 15 Mar 2024 10:00:00 +0545</pubDate>
-      <guid>http://localhost:64541/tags/web-development/</guid>
+      <guid>http://localhost:1313/tags/web-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Static Sites</title>
+      <link>http://localhost:1313/tags/static-sites/</link>
+      <pubDate>Sun, 10 Mar 2024 10:00:00 +0545</pubDate>
+      <guid>http://localhost:1313/tags/static-sites/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Award</title>
+      <link>http://localhost:1313/tags/award/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/award/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AWS</title>
+      <link>http://localhost:1313/tags/aws/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/aws/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blockchain</title>
+      <link>http://localhost:1313/tags/blockchain/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/blockchain/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Certification</title>
+      <link>http://localhost:1313/tags/certification/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/certification/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud</title>
+      <link>http://localhost:1313/tags/cloud/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Collaboration</title>
+      <link>http://localhost:1313/tags/collaboration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/collaboration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hackathon</title>
+      <link>http://localhost:1313/tags/hackathon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/hackathon/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Innovation</title>
+      <link>http://localhost:1313/tags/innovation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/innovation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WebSocket</title>
+      <link>http://localhost:1313/tags/websocket/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/websocket/</guid>
       <description></description>
     </item>
   </channel>

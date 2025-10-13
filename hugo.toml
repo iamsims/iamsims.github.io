@@ -55,7 +55,7 @@ defaultTheme = "light"
   [params.profileMode]
   enabled = true
   title = "Simran KC"
-  subtitle = "I'm Simran KC, a dedicated developer with a strong focus on backend development. Specializing in Python programming and utilizing the FastAPI framework, I excel at building robust and scalable applications. My expertise extends to JavaScript, particularly Vue.js and other frameworks, enabling me to deliver dynamic and interactive user experiences. My versatility in both frontend and blockchain technologies allows me to approach projects holistically and collaborate effectively with multidisciplinary teams. With a passion for innovation and a commitment to staying ahead of industry trends, I aim to create impactful solutions that drive success."
+  subtitle = "Graduate Research Assistant at NASA IMPACT | Specializing in NLP, Large Language Models, and Backend Development with Python & FastAPI | Building scalable ML systems and human-centric AI agents"
   imageUrl = "home/my-pic.jpg"
   imageWidth = 220
   imageHeight = 220
@@ -78,7 +78,7 @@ defaultTheme = "light"
 
   [[params.socialIcons]]
   name = "cv"
-  url = "https://drive.google.com/file/d/1xo-M5kbUqupnTwfRnHLdc3LTWLMqFPXT/view"
+  url = "https://drive.google.com/file/d/1pUlW4q67wya4pXry4HY8qF-knjB7dkSG/view?usp=sharing"
 
   [params.fuseOpts]
   isCaseSensitive = false

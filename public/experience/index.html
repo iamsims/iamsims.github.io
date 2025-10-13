@@ -137,39 +137,101 @@
 <div class="experience-timeline">
 <div class="experience-card current">
 <div class="experience-header">
-<h3>Software Engineer</h3>
+<h3>Graduate Research Assistant</h3>
 <div class="company-info">
-<span class="company">Sireto Technology</span>
-<span class="duration">September 2022 - Present</span>
+<span class="company">NASA IMPACT</span>
+<span class="duration">August 2024 - Present</span>
+</div>
 </div>
 <span class="status current-role">Current Role</span>
-</div>
 <p class="experience-description">
-Full-stack developer specializing in backend development with Python and FastAPI, frontend development with Vue.js, and blockchain integration projects. Leading the development of innovative solutions including KuberIDE and Payment Splitter applications.
+Contributing to NASA's Accelerated Knowledge Discovery project, developing a deep research LLM agent enhanced with human-in-the-loop guidance for scientific exploration.
 </p>
 <div class="achievements">
 <h4>Key Achievements:</h4>
 <ul>
-<li>Developed HTTPS and WebSocket proxy for KuberIDE backend in FastAPI for user tracking</li>
-<li>Integrated GitHub/Google OAuth authentication, reducing login errors significantly</li>
-<li>Added Intellisense feature to online IDE using HLS, improving code editing experience</li>
-<li>Designed dynamically generated smart contracts for Payment Splitter application</li>
-<li>Developed Discord Cardano Bot for automated NFT transfers based on user credits</li>
-<li>Implemented serialized NFT transfer using Celery and Redis for high-volume processing</li>
+<li>Fine-tuned and integrated FastText and RoBERTa classifiers on large scientific text corpora to implement a multi-model automated tagging pipeline and relevancy-checking classifier for scraped documents, reducing manual curation time by 95%</li>
+<li>Integrated models into NASA's Science Discovery Engine to enable ML-assisted content curation workflows</li>
+<li>Developed a scalable inference pipeline in Python and FastAPI to serve multiple models through a single API in a resource-constrained environment</li>
+<li>Implemented a Redis-backed queue for batch processing, with loosely coupled distributed workers that dynamically load and unload models to optimize resources and scale horizontally</li>
+<li>Added Pytest unit and integration tests to improve reliability and maintainability</li>
 </ul>
 </div>
 <div class="tech-stack">
 <span class="tech-tag">Python</span>
 <span class="tech-tag">FastAPI</span>
-<span class="tech-tag">Vue.js</span>
-<span class="tech-tag">Blockchain</span>
+<span class="tech-tag">NLP</span>
+<span class="tech-tag">LLMs</span>
+<span class="tech-tag">RoBERTa</span>
 <span class="tech-tag">Redis</span>
-<span class="tech-tag">Celery</span>
+<span class="tech-tag">Pytest</span>
 </div>
 <div class="experience-links">
-<a href="http://localhost:1313/experience/siretotech/" class="read-more">Read More →</a>
+<a href="https://impact.earthdata.nasa.gov" class="company-link" target="_blank">NASA IMPACT</a>
+</div>
+</div>
+<div class="experience-card">
+<div class="experience-header">
+<h3>Python Developer (ML)</h3>
+<div class="company-info">
+<span class="company">Mutual Art</span>
+<span class="duration">September 2023 - June 2024</span>
+</div>
+</div>
+<p class="experience-description">
+Developed ML-powered features and optimized backend systems for art market intelligence platform serving thousands of users.
+</p>
+<div class="achievements">
+<h4>Key Achievements:</h4>
+<ul>
+<li>Built a FAISS-based vector database for reverse image search to enable similarity retrieval using an ensemble of pHash and CNN embeddings</li>
+<li>Developed and deployed the backend and data pipeline for the "Repeated Sales of Artworks" feature which resulted in a 200% increase in customer convergence rates</li>
+<li>Optimized the core near-duplicate image detection algorithm by implementing parallelization, caching, efficient SQL queries, and strategic performance tuning, reducing runtime by 75%</li>
+<li>Collaborated with cross-functional teams to troubleshoot, diagnose, and resolve code issues and bugs</li>
+</ul>
+</div>
+<div class="tech-stack">
+<span class="tech-tag">Python</span>
+<span class="tech-tag">FAISS</span>
+<span class="tech-tag">Computer Vision</span>
+<span class="tech-tag">SQL</span>
+<span class="tech-tag">CNN</span>
+</div>
+<div class="experience-links">
+<a href="https://www.mutualart.com" class="company-link" target="_blank">Mutual Art</a>
+</div>
+</div>
+<div class="experience-card">
+<div class="experience-header">
+<h3>Associate Software Engineer</h3>
+<div class="company-info">
+<span class="company">Sireto Technology</span>
+<span class="duration">September 2022 - September 2023</span>
+</div>
+</div>
+<p class="experience-description">
+Developed KuberIDE, a web-based IDE for Cardano developers within a microservices architecture. Led backend development focusing on authentication, access management, and deployment optimization.
+</p>
+<div class="achievements">
+<h4>Key Achievements:</h4>
+<ul>
+<li>Developed KuberIDE web-based IDE (ReactJS, FastAPI) within a microservices architecture</li>
+<li>Designed and implemented backend authentication, access management, and session handling using OAuth cookies for browser-based access and API keys for direct access</li>
+<li>Built an HTTPS gateway to enable access to in-house microservices and WebSocket proxy to provide IntelliSense in the online IDE for Haskell using the Haskell Language Server</li>
+<li>Optimized deployment by implementing Pytest-based testing, Dockerfiles, and CI/CD pipelines, improving system reliability, scalability, and continuous integration workflows</li>
+</ul>
+</div>
+<div class="tech-stack">
+<span class="tech-tag">Python</span>
+<span class="tech-tag">FastAPI</span>
+<span class="tech-tag">ReactJS</span>
+<span class="tech-tag">Docker</span>
+<span class="tech-tag">CI/CD</span>
+<span class="tech-tag">OAuth</span>
+<span class="tech-tag">WebSocket</span>
+</div>
+<div class="experience-links">
 <a href="https://sireto.com" class="company-link" target="_blank">Sireto Technology</a>
-<a href="https://fastapi.tiangolo.com" class="external-link" target="_blank">FastAPI</a>
 </div>
 </div>
 <div class="experience-card">
@@ -179,8 +241,8 @@ Full-stack developer specializing in backend development with Python and FastAPI
 <span class="company">Logpoint</span>
 <span class="duration">January 2022 - August 2022</span>
 </div>
-<span class="status internship">Internship</span>
 </div>
+<span class="status internship">Internship</span>
 <p class="experience-description">
 Focused on Linux system administration, performance optimization, and automation. Gained extensive experience in system monitoring, troubleshooting, and scripting for enterprise-level infrastructure.
 </p>
@@ -199,9 +261,7 @@ Focused on Linux system administration, performance optimization, and automation
 <span class="tech-tag">Performance Optimization</span>
 </div>
 <div class="experience-links">
-<a href="http://localhost:1313/experience/logpoint/" class="read-more">Read More →</a>
 <a href="https://www.logpoint.com" class="company-link" target="_blank">Logpoint</a>
-<a href="https://www.linux.org" class="external-link" target="_blank">Linux</a>
 </div>
 </div>
 <div class="experience-card">
@@ -211,8 +271,8 @@ Focused on Linux system administration, performance optimization, and automation
 <span class="company">Leapfrog Technology</span>
 <span class="duration">April 2021 - May 2021</span>
 </div>
-<span class="status internship">Internship</span>
 </div>
+<span class="status internship">Internship</span>
 <p class="experience-description">
 Short-term intensive internship focusing on JavaScript development and algorithmic problem-solving. Enhanced both frontend and backend skills while working on practical projects.
 </p>
@@ -231,20 +291,18 @@ Short-term intensive internship focusing on JavaScript development and algorithm
 <span class="tech-tag">Game Development</span>
 </div>
 <div class="experience-links">
-<a href="http://localhost:1313/experience/leapfrogintern/" class="read-more">Read More →</a>
 <a href="https://www.lftechnology.com" class="company-link" target="_blank">Leapfrog Technology</a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="external-link" target="_blank">JavaScript</a>
 </div>
 </div>
 <div class="experience-card">
 <div class="experience-header">
 <h3>AI Research Intern</h3>
 <div class="company-info">
-<span class="company">NAAMII (Nepal Applied Mathematics and Informatics Institute)</span>
+<span class="company">NAAMII</span>
 <span class="duration">May 2020 - August 2020</span>
 </div>
-<span class="status research">Research</span>
 </div>
+<span class="status research">Research</span>
 <p class="experience-description">
 Research internship focused on Computer Vision and AI model development. Worked with state-of-the-art CV models and contributed to various projects involving object detection, facial recognition, and image segmentation.
 </p>
@@ -265,9 +323,7 @@ Research internship focused on Computer Vision and AI model development. Worked 
 <span class="tech-tag">scikit-learn</span>
 </div>
 <div class="experience-links">
-<a href="http://localhost:1313/experience/naamiresearch/" class="read-more">Read More →</a>
 <a href="https://www.naamii.org.np" class="company-link" target="_blank">NAAMII</a>
-<a href="https://pytorch.org" class="external-link" target="_blank">PyTorch</a>
 </div>
 </div>
 </div>
@@ -349,12 +405,14 @@ Research internship focused on Computer Vision and AI model development. Worked 
     color: var(--primary);
     font-size: 1.5rem;
     margin: 0;
+    flex: 1;
 }
 
 .company-info {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-left: auto;
 }
 
 .company {

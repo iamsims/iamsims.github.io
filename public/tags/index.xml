@@ -6,8 +6,36 @@
     <description>Recent content in Tags on Simran KC</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Sep 2025 12:03:39 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 12 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Active Learning</title>
+      <link>http://localhost:1313/tags/active-learning/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/active-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ActiveLLM</title>
+      <link>http://localhost:1313/tags/activellm/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/activellm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Labelling Costs in Training</title>
+      <link>http://localhost:1313/tags/labelling-costs-in-training/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/labelling-costs-in-training/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM</title>
+      <link>http://localhost:1313/tags/llm/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/llm/</guid>
+      <description></description>
+    </item>
     <item>
       <title>FastAPI</title>
       <link>http://localhost:1313/tags/fastapi/</link>
@@ -114,10 +142,31 @@
       <description></description>
     </item>
     <item>
+      <title>CNN</title>
+      <link>http://localhost:1313/tags/cnn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cnn/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Collaboration</title>
       <link>http://localhost:1313/tags/collaboration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/collaboration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Computer Vision</title>
+      <link>http://localhost:1313/tags/computer-vision/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/computer-vision/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FAISS</title>
+      <link>http://localhost:1313/tags/faiss/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/faiss/</guid>
       <description></description>
     </item>
     <item>
@@ -132,6 +181,55 @@
       <link>http://localhost:1313/tags/innovation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/innovation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLMs</title>
+      <link>http://localhost:1313/tags/llms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/llms/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Machine Learning</title>
+      <link>http://localhost:1313/tags/machine-learning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NLP</title>
+      <link>http://localhost:1313/tags/nlp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/nlp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pytest</title>
+      <link>http://localhost:1313/tags/pytest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/pytest/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redis</title>
+      <link>http://localhost:1313/tags/redis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/redis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RoBERTa</title>
+      <link>http://localhost:1313/tags/roberta/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/roberta/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQL</title>
+      <link>http://localhost:1313/tags/sql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sql/</guid>
       <description></description>
     </item>
     <item>

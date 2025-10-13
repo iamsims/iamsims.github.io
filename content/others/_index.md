@@ -6,98 +6,93 @@ description: "Certifications, awards, hackathon prizes, and achievements"
 <div class="others-grid">
 
 <div class="achievement-card certification">
-<div class="achievement-icon">🏆</div>
-<h3>AWS Certified Developer</h3>
+<div class="achievement-icon">🚀</div>
+<h3>Machine Learning in Production</h3>
 <div class="achievement-meta">
 <span class="type">Certification</span>
-<span class="date">2023</span>
+<span class="date">May 2025</span>
 </div>
 <p class="achievement-description">
-Amazon Web Services Certified Developer Associate certification, demonstrating proficiency in developing and maintaining applications on the AWS platform with best practices for security, performance, and cost optimization.
+Completed Machine Learning in Production course authorized by DeepLearning.AI and offered through Coursera. Covered MLOps best practices, model deployment, monitoring, and maintaining ML systems in production environments.
 </p>
 <div class="achievement-links">
-<a href="/others/aws-certification/" class="read-more">Read More →</a>
-<a href="https://aws.amazon.com/certification/" class="external-link" target="_blank">AWS Certifications</a>
+<a href="https://coursera.org/verify/Q6ODQCJPOSE8" class="external-link" target="_blank">Verify Certificate</a>
+<a href="https://www.coursera.org/learn/introduction-to-machine-learning-in-production" class="external-link" target="_blank">View Course</a>
 </div>
 </div>
 
 <div class="achievement-card award">
-<div class="achievement-icon">🥇</div>
-<h3>Best Innovation Award</h3>
+<div class="achievement-icon">🥈</div>
+<h3>Won 2nd Place, Impact X-athon 2024</h3>
 <div class="achievement-meta">
 <span class="type">Award</span>
-<span class="date">2022</span>
+<span class="date">2024</span>
 </div>
 <p class="achievement-description">
-Recognized for developing innovative solutions during the annual company hackathon, focusing on blockchain integration and user experience improvements that enhanced overall platform functionality.
+Secured 2nd place at NASA IMPACT X-athon 2024, developing a innovate solution for path finder in the building. 
 </p>
 <div class="achievement-links">
-<a href="/others/innovation-award/" class="read-more">Read More →</a>
-<span class="company">Sireto Technology</span>
+<span class="company">NASA IMPACT</span>
 </div>
 </div>
 
-<div class="achievement-card hackathon">
-<div class="achievement-icon">💻</div>
-<h3>HackTheValley Winner</h3>
+<div class="achievement-card fellowship">
+<div class="achievement-icon">🎓</div>
+<h3>Codepath Fellow</h3>
 <div class="achievement-meta">
-<span class="type">Hackathon</span>
-<span class="date">2021</span>
+<span class="type">Fellowship</span>
+<span class="date">2024</span>
 </div>
 <p class="achievement-description">
-First place winner at HackTheValley hackathon for developing a real-time collaborative coding platform with integrated video chat and code review features, built using Vue.js and WebSocket technology.
+Selected as a Codepath Fellow, participating in complex problem solving and coordination with team members to collaborate on various kinds of problem solving. 
 </p>
 <div class="achievement-links">
-<a href="/others/hackthevalley/" class="read-more">Read More →</a>
-<a href="https://hackthevalley.io" class="external-link" target="_blank">HackTheValley</a>
+<a href="https://www.codepath.org" class="external-link" target="_blank">Codepath</a>
+</div>
+</div>
+
+<div class="achievement-card leadership">
+<div class="achievement-icon">🎤</div>
+<h3>Microsoft Learn Student Ambassador</h3>
+<div class="achievement-meta">
+<span class="type">Leadership</span>
+<span class="date">2019 - 2021</span>
+</div>
+<p class="achievement-description">
+Served as Microsoft Learn Student Ambassador, organizing technical workshops, promoting Microsoft technologies, and building a community of student developers on campus. Selected to join the Microsoft Student Summit 2020 APAC Region with full funding sponsored by Microsoft.
+</p>
+<div class="achievement-links">
+<a href="https://studentambassadors.microsoft.com" class="external-link" target="_blank">Microsoft Learn</a>
 </div>
 </div>
 
 <div class="achievement-card certification">
 <div class="achievement-icon">📜</div>
-<h3>MongoDB Developer Certification</h3>
+<h3>Machine Learning Certification</h3>
 <div class="achievement-meta">
 <span class="type">Certification</span>
-<span class="date">2022</span>
+<span class="date">2019</span>
 </div>
 <p class="achievement-description">
-MongoDB Certified Developer Associate certification, validating expertise in MongoDB database design, development, and deployment with focus on performance optimization and scalability.
+Completed Machine Learning certification from Stanford Online via Coursera, covering supervised learning, unsupervised learning, neural networks, and best practices in machine learning.
 </p>
 <div class="achievement-links">
-<a href="/others/mongodb-certification/" class="read-more">Read More →</a>
-<a href="https://university.mongodb.com/certification" class="external-link" target="_blank">MongoDB University</a>
+<a href="https://www.coursera.org/learn/machine-learning" class="external-link" target="_blank">Stanford ML Course</a>
 </div>
 </div>
 
 <div class="achievement-card award">
-<div class="achievement-icon">🌟</div>
-<h3>Outstanding Performance Award</h3>
+<div class="achievement-icon">🎓</div>
+<h3>Full Undergraduate Scholarship</h3>
 <div class="achievement-meta">
 <span class="type">Award</span>
-<span class="date">2023</span>
+<span class="date">2017</span>
 </div>
 <p class="achievement-description">
-Recognized for exceptional contribution to team projects and maintaining high code quality standards while delivering features ahead of schedule and mentoring junior developers.
+Awarded full undergraduate scholarship from Tribhuvan University for academic excellence, covering tuition and expenses throughout the Bachelor of Computer Engineering program.
 </p>
 <div class="achievement-links">
-<a href="/others/performance-award/" class="read-more">Read More →</a>
-<span class="company">Current Role</span>
-</div>
-</div>
-
-<div class="achievement-card hackathon">
-<div class="achievement-icon">🚀</div>
-<h3>NASA Space Apps Challenge</h3>
-<div class="achievement-meta">
-<span class="type">Hackathon</span>
-<span class="date">2020</span>
-</div>
-<p class="achievement-description">
-Participated in NASA Space Apps Challenge, developing an Earth observation data visualization tool using satellite imagery and machine learning for environmental monitoring and climate research.
-</p>
-<div class="achievement-links">
-<a href="/others/nasa-space-apps/" class="read-more">Read More →</a>
-<a href="https://www.spaceappschallenge.org" class="external-link" target="_blank">Space Apps</a>
+<span class="company">Tribhuvan University</span>
 </div>
 </div>
 
@@ -134,9 +129,19 @@ Participated in NASA Space Apps Challenge, developing an Earth observation data 
     border-left: 4px solid #f59e0b;
 }
 
+.achievement-card.fellowship {
+    border-left: 4px solid #8b5cf6;
+}
+
 .achievement-card.hackathon {
     border-left: 4px solid #10b981;
 }
+
+.achievement-card.leadership {
+    border-left: 4px solid #ec4899;
+}
+
+
 
 .achievement-icon {
     font-size: 2.5rem;
@@ -171,6 +176,14 @@ Participated in NASA Space Apps Challenge, developing an Earth observation data 
 
 .award .type {
     background: #f59e0b;
+}
+
+.fellowship .type {
+    background: #8b5cf6;
+}
+
+.leadership .type {
+    background: #ec4899;
 }
 
 .hackathon .type {

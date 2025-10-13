@@ -6,8 +6,15 @@
     <description>Recent content in Categories on Simran KC</description>
     <generator>Hugo -- 0.150.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Sep 2025 12:03:39 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 12 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLM Training</title>
+      <link>http://localhost:1313/categories/llm-training/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/llm-training/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Web Development</title>
       <link>http://localhost:1313/categories/web-development/</link>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Paper Review: ActiveLLM - Large Language Model-Based Active Learning for Textual Few-Shot Scenarios | Simran KC</title>
+<meta name="keywords" content="LLM, Active Learning, ActiveLLM, Labelling Costs in Training">
+<meta name="description" content="Original Paper (arXiv:2405.10808)
+1. The Problem
+The main problem we face in training LLMs for discriminative tasks, such as classification, is the cost of data labeling. Every data point needs manual annotation by domain experts, and that&rsquo;s the real bottleneck. I have personally faced this in my own experience working with NASA IMPACT when developing classification models. The most painful point was to wait for the SMEs to label the data which caused long delays - waiting weeks or even months before we could train or retrain a model.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/blog/active-llm/">
+<link crossorigin="anonymous" href="http://localhost:1313/assets/css/stylesheet.85c6ff9febe222f48442e0cb94ce3a9364c6644d81b68becf905357336901553.css" integrity="sha256-hcb/n&#43;viIvSEQuDLlM46k2TGZE2Btovs&#43;QU1czaQFVM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/blog/active-llm/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/blog/active-llm/">
+  <meta property="og:site_name" content="Simran KC">
+  <meta property="og:title" content="Paper Review: ActiveLLM - Large Language Model-Based Active Learning for Textual Few-Shot Scenarios">
+  <meta property="og:description" content="Original Paper (arXiv:2405.10808)
+1. The Problem The main problem we face in training LLMs for discriminative tasks, such as classification, is the cost of data labeling. Every data point needs manual annotation by domain experts, and that’s the real bottleneck. I have personally faced this in my own experience working with NASA IMPACT when developing classification models. The most painful point was to wait for the SMEs to label the data which caused long delays - waiting weeks or even months before we could train or retrain a model.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-10-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-12T00:00:00+00:00">
+    <meta property="article:tag" content="LLM">
+    <meta property="article:tag" content="Active Learning">
+    <meta property="article:tag" content="ActiveLLM">
+    <meta property="article:tag" content="Labelling Costs in Training">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Paper Review: ActiveLLM - Large Language Model-Based Active Learning for Textual Few-Shot Scenarios">
+<meta name="twitter:description" content="Original Paper (arXiv:2405.10808)
+1. The Problem
+The main problem we face in training LLMs for discriminative tasks, such as classification, is the cost of data labeling. Every data point needs manual annotation by domain experts, and that&rsquo;s the real bottleneck. I have personally faced this in my own experience working with NASA IMPACT when developing classification models. The most painful point was to wait for the SMEs to label the data which caused long delays - waiting weeks or even months before we could train or retrain a model.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blog",
+      "item": "http://localhost:1313/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Paper Review: ActiveLLM - Large Language Model-Based Active Learning for Textual Few-Shot Scenarios",
+      "item": "http://localhost:1313/blog/active-llm/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Paper Review: ActiveLLM - Large Language Model-Based Active Learning for Textual Few-Shot Scenarios",
+  "name": "Paper Review: ActiveLLM - Large Language Model-Based Active Learning for Textual Few-Shot Scenarios",
+  "description": "Original Paper (arXiv:2405.10808)\n1. The Problem The main problem we face in training LLMs for discriminative tasks, such as classification, is the cost of data labeling. Every data point needs manual annotation by domain experts, and that\u0026rsquo;s the real bottleneck. I have personally faced this in my own experience working with NASA IMPACT when developing classification models. The most painful point was to wait for the SMEs to label the data which caused long delays - waiting weeks or even months before we could train or retrain a model.\n",
+  "keywords": [
+    "LLM", "Active Learning", "ActiveLLM", "Labelling Costs in Training"
+  ],
+  "articleBody": "Original Paper (arXiv:2405.10808)\n1. The Problem The main problem we face in training LLMs for discriminative tasks, such as classification, is the cost of data labeling. Every data point needs manual annotation by domain experts, and that’s the real bottleneck. I have personally faced this in my own experience working with NASA IMPACT when developing classification models. The most painful point was to wait for the SMEs to label the data which caused long delays - waiting weeks or even months before we could train or retrain a model.\nThe Traditional Solution:\nThe usual solution to bring down labeling costs is Active Learning (AL). It lets the model select which samples are most valuable to label, typically based on uncertainty. However, these methods still face two major bottlenecks:\nCold-Start Problem - The model cannot judge which samples are important without some initial labeled data. Training Delay - Conventional AL retrains models after every selection cycle, slowing down the annotation process. 2. What ActiveLLM Proposes ActiveLLM proposed using instruction-tuned LLMs (like GPT-4 or Mistral Large) as query models in the active learning loop. Instead of repeatedly retraining, the LLM selects high-impact instances to be labeled from a set of unlabeled examples - no initial labeled data and no iterative training needed.\nThe paper evaluates two modes:\nFew-Shot Mode (main focus) Non-Few-Shot/Iterative Mode In this review, we focus on the few-shot setting, which is the core contribution of the paper. The non-few-shot mode is used to demonstrate that ActiveLLM can scale to larger datasets and also help other AL methods overcome their cold-start limitations.\n3. How It Works Unlabeled Data Pool - A set of examples without labels. Prompt an LLM - The LLM receives a task description and a batch of unlabeled data. LLM Selection - The model selects examples that are diverse or ambiguous. Human Annotation - Only those selected examples are labeled by annotators. Successor Training - A smaller transformer (like BERT) is fine-tuned on that subset. Key design note: Both batch size (how many unlabeled examples the LLM sees at once) and selection size (how many examples the LLM picks for human labeling) are treated as hyperparameters - optimized to balance context length and selection quality. The successor model’s training epochs (25) are also tuned for stability in low-data environment.\n4. Key Findings Parameter Finding Explanation Prompt Strategy “Think step by step” (Chain-of-Thought) works best CoT helps LLM reason over examples without inflating context too much. Batch Size (context limit) 200 unlabeled examples per prompt gives optimal results Larger context hurts performance due to LLM’s reasoning degradation with long inputs. Selection Size Selecting 32 examples per round gives best accuracy Performance drops between 32-90; increases again after 90 due to larger training data. LLMs Tested GPT-4, GPT-3.5, o1, Mistral Large, Llama 3, Gemini Ultra, Mixtral GPT-4 and GPT-3.5 consistently best; Mistral performs better on shorter texts. 5. Architecture (Best Configuration from the Paper) Few-Shot Mode (Main Focus): LLM (GPT-4) is prompted with 200 unlabeled samples. It selects 32 high-impact examples using “Think step by step” reasoning. Annotators label those 32 examples. BERT/RoBERTa is fine-tuned for 25 epochs. Non-Few-Shot (Iterative Mode): LLM selects 25 examples per iteration, up to ~300 total. Used to show ActiveLLM’s ability to overcome the cold-start problem in other AL methods (e.g., BALD, LC, PE). ActiveLLM Architecture (Few shot mode with best performing hyperparameters)\n6. Results and Impact ActiveLLM:\nSolved the cold-start problem - could even initialize other AL strategies for better performance. Required seconds per query instead of hours of retraining. Outperformed traditional AL strategies (BALD, Least Confidence, Prediction Entropy, Embedding K-Means) in few-shot tasks. Boosted performance of few-shot learners like ADAPET and PERFECT by 17-24%. Scalable beyond few-shot - can operate iteratively to expand labeled data intelligently for larger datasets. 7. Limitations Context length: It limits the number of examples per query. Possible data leakage: The data used in the benchmarking could have already been seen by LLM. Privacy risks: Using external APIs results in data exposure during annotation LLM-dependent variability - Performance differs across GPT-4, Mistral, and Llama as query models 8. Conclusion ActiveLLM shows a powerful hybrid design - combining the reasoning ability of LLMs with the efficiency of smaller transformer models. It transforms how we approach annotation: instead of training models to guess uncertainty, we use an LLM’s understanding to pick the right data from the start.\n",
+  "wordCount" : "727",
+  "inLanguage": "en",
+  "datePublished": "2025-10-12T00:00:00Z",
+  "dateModified": "2025-10-12T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/blog/active-llm/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Simran KC",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header sticky-header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Simran KC (Alt + H)">Simran KC</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/blog" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/experience" title="Experience">
+                    <span>Experience</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/others" title="Others">
+                    <span>Others</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/blog/">Blog</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Paper Review: ActiveLLM - Large Language Model-Based Active Learning for Textual Few-Shot Scenarios
+    </h1>
+    <div class="post-meta">
+
+
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">‎ Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#1-the-problem" aria-label="1. The Problem">1. The Problem</a></li>
+                <li>
+                    <a href="#2-what-activellm-proposes" aria-label="2. What ActiveLLM Proposes">2. What ActiveLLM Proposes</a></li>
+                <li>
+                    <a href="#3-how-it-works" aria-label="3. How It Works">3. How It Works</a></li>
+                <li>
+                    <a href="#4-key-findings" aria-label="4. Key Findings">4. Key Findings</a></li>
+                <li>
+                    <a href="#5-architecture-best-configuration-from-the-paper" aria-label="5. Architecture (Best Configuration from the Paper)">5. Architecture (Best Configuration from the Paper)</a><ul>
+                        
+                <li>
+                    <a href="#few-shot-mode-main-focus" aria-label="Few-Shot Mode (Main Focus):">Few-Shot Mode (Main Focus):</a></li>
+                <li>
+                    <a href="#non-few-shot-iterative-mode" aria-label="Non-Few-Shot (Iterative Mode):">Non-Few-Shot (Iterative Mode):</a></li></ul>
+                </li>
+                <li>
+                    <a href="#6-results-and-impact" aria-label="6. Results and Impact">6. Results and Impact</a></li>
+                <li>
+                    <a href="#7-limitations" aria-label="7. Limitations">7. Limitations</a></li>
+                <li>
+                    <a href="#8-conclusion" aria-label="8. Conclusion">8. Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p><a href="https://arxiv.org/abs/2405.10808">Original Paper (arXiv:2405.10808)</a></p>
+<h2 id="1-the-problem">1. The Problem<a hidden class="anchor" aria-hidden="true" href="#1-the-problem">#</a></h2>
+<p>The main problem we face in training LLMs for discriminative tasks, such as classification, is the cost of data labeling. Every data point needs manual annotation by domain experts, and that&rsquo;s the real bottleneck. I have personally faced this in my own experience working with NASA IMPACT when developing classification models. The most painful point was to wait for the SMEs to label the data which caused long delays - waiting weeks or even months before we could train or retrain a model.</p>
+<p><strong>The Traditional Solution:</strong></p>
+<p>The usual solution to bring down labeling costs is <strong>Active Learning (AL)</strong>. It lets the model select which samples are most valuable to label, typically based on uncertainty. However, these methods still face two major bottlenecks:</p>
+<ol>
+<li><strong>Cold-Start Problem</strong> - The model cannot judge which samples are important without some initial labeled data.</li>
+<li><strong>Training Delay</strong> - Conventional AL retrains models after every selection cycle, slowing down the annotation process.</li>
+</ol>
+<h2 id="2-what-activellm-proposes">2. What ActiveLLM Proposes<a hidden class="anchor" aria-hidden="true" href="#2-what-activellm-proposes">#</a></h2>
+<p>ActiveLLM proposed using instruction-tuned LLMs (like GPT-4 or Mistral Large) as query models in the active learning loop. Instead of repeatedly retraining, the LLM selects high-impact instances to be labeled from a set of unlabeled examples - no initial labeled data and no iterative training needed.</p>
+<p>The paper evaluates two modes:</p>
+<ul>
+<li>Few-Shot Mode (main focus)</li>
+<li>Non-Few-Shot/Iterative Mode</li>
+</ul>
+<p>In this review, we focus on the few-shot setting, which is the core contribution of the paper. The non-few-shot mode is used to demonstrate that ActiveLLM can scale to larger datasets and also help other AL methods overcome their cold-start limitations.</p>
+<h2 id="3-how-it-works">3. How It Works<a hidden class="anchor" aria-hidden="true" href="#3-how-it-works">#</a></h2>
+<ol>
+<li><strong>Unlabeled Data Pool</strong> - A set of examples without labels.</li>
+<li><strong>Prompt an LLM</strong> - The LLM receives a task description and a batch of unlabeled data.</li>
+<li><strong>LLM Selection</strong> - The model selects examples that are diverse or ambiguous.</li>
+<li><strong>Human Annotation</strong> - Only those selected examples are labeled by annotators.</li>
+<li><strong>Successor Training</strong> - A smaller transformer (like BERT) is fine-tuned on that subset.</li>
+</ol>
+<p><strong>Key design note:</strong>
+Both batch size (how many unlabeled examples the LLM sees at once) and selection size (how many examples the LLM picks for human labeling) are treated as hyperparameters - optimized to balance context length and selection quality. The successor model&rsquo;s training epochs (25) are also tuned for stability in low-data environment.</p>
+<h2 id="4-key-findings">4. Key Findings<a hidden class="anchor" aria-hidden="true" href="#4-key-findings">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Finding</th>
+          <th>Explanation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Prompt Strategy</td>
+          <td>&ldquo;Think step by step&rdquo; (Chain-of-Thought) works best</td>
+          <td>CoT helps LLM reason over examples without inflating context too much.</td>
+      </tr>
+      <tr>
+          <td>Batch Size (context limit)</td>
+          <td>200 unlabeled examples per prompt gives optimal results</td>
+          <td>Larger context hurts performance due to LLM&rsquo;s reasoning degradation with long inputs.</td>
+      </tr>
+      <tr>
+          <td>Selection Size</td>
+          <td>Selecting 32 examples per round gives best accuracy</td>
+          <td>Performance drops between 32-90; increases again after 90 due to larger training data.</td>
+      </tr>
+      <tr>
+          <td>LLMs Tested</td>
+          <td>GPT-4, GPT-3.5, o1, Mistral Large, Llama 3, Gemini Ultra, Mixtral</td>
+          <td>GPT-4 and GPT-3.5 consistently best; Mistral performs better on shorter texts.</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="5-architecture-best-configuration-from-the-paper">5. Architecture (Best Configuration from the Paper)<a hidden class="anchor" aria-hidden="true" href="#5-architecture-best-configuration-from-the-paper">#</a></h2>
+<h3 id="few-shot-mode-main-focus">Few-Shot Mode (Main Focus):<a hidden class="anchor" aria-hidden="true" href="#few-shot-mode-main-focus">#</a></h3>
+<ul>
+<li>LLM (GPT-4) is prompted with 200 unlabeled samples.</li>
+<li>It selects 32 high-impact examples using &ldquo;Think step by step&rdquo; reasoning.</li>
+<li>Annotators label those 32 examples.</li>
+<li>BERT/RoBERTa is fine-tuned for 25 epochs.</li>
+</ul>
+<h3 id="non-few-shot-iterative-mode">Non-Few-Shot (Iterative Mode):<a hidden class="anchor" aria-hidden="true" href="#non-few-shot-iterative-mode">#</a></h3>
+<ul>
+<li>LLM selects 25 examples per iteration, up to ~300 total.</li>
+<li>Used to show ActiveLLM&rsquo;s ability to overcome the cold-start problem in other AL methods (e.g., BALD, LC, PE).</li>
+</ul>
+<p><img alt="ActiveLLM Architecture" loading="lazy" src="http://localhost:1313/blog/active-llm/architecture.png">
+<em>ActiveLLM Architecture (Few shot mode with best performing hyperparameters)</em></p>
+<h2 id="6-results-and-impact">6. Results and Impact<a hidden class="anchor" aria-hidden="true" href="#6-results-and-impact">#</a></h2>
+<p>ActiveLLM:</p>
+<ul>
+<li>Solved the cold-start problem - could even initialize other AL strategies for better performance.</li>
+<li>Required seconds per query instead of hours of retraining.</li>
+<li>Outperformed traditional AL strategies (BALD, Least Confidence, Prediction Entropy, Embedding K-Means) in few-shot tasks.</li>
+<li>Boosted performance of few-shot learners like ADAPET and PERFECT by 17-24%.</li>
+<li>Scalable beyond few-shot - can operate iteratively to expand labeled data intelligently for larger datasets.</li>
+</ul>
+<h2 id="7-limitations">7. Limitations<a hidden class="anchor" aria-hidden="true" href="#7-limitations">#</a></h2>
+<ul>
+<li><strong>Context length:</strong> It limits the number of examples per query.</li>
+<li><strong>Possible data leakage:</strong> The data used in the benchmarking could have already been seen by LLM.</li>
+<li><strong>Privacy risks:</strong> Using external APIs results in data exposure during annotation</li>
+<li><strong>LLM-dependent variability</strong> - Performance differs across GPT-4, Mistral, and Llama as query models</li>
+</ul>
+<h2 id="8-conclusion">8. Conclusion<a hidden class="anchor" aria-hidden="true" href="#8-conclusion">#</a></h2>
+<p>ActiveLLM shows a powerful hybrid design - combining the reasoning ability of LLMs with the efficiency of smaller transformer models. It transforms how we approach annotation: instead of training models to guess uncertainty, we use an LLM&rsquo;s understanding to pick the right data from the start.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/llm/">LLM</a></li>
+      <li><a href="http://localhost:1313/tags/active-learning/">Active Learning</a></li>
+      <li><a href="http://localhost:1313/tags/activellm/">ActiveLLM</a></li>
+      <li><a href="http://localhost:1313/tags/labelling-costs-in-training/">Labelling Costs in Training</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2025 <a href="http://localhost:1313/">Simran KC</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

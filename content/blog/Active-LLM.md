@@ -4,17 +4,16 @@ date: 2025-10-12
 draft: false
 tags: ["LLM", "Active Learning", "ActiveLLM", "Labelling Costs in Training"]
 categories: ["LLM Training"]
-unlisted: true
-build:
-  list: false
-  render: true
+summary: "A comprehensive review of the ActiveLLM paper exploring how instruction-tuned LLMs can revolutionize active learning by selecting high-impact training samples without cold-start problems or iterative retraining delays."
+paper_url: "https://arxiv.org/abs/2405.10808"
+paper_url_label: "arXiv Paper"
 ---
 
 [Original Paper (arXiv:2405.10808)](https://arxiv.org/abs/2405.10808)
 
 ## 1. The Problem
 
-The main problem we face in training LLMs for discriminative tasks, such as classification, is the cost of data labeling. Every data point needs manual annotation by domain experts, and that's the real bottleneck. I have personally faced this in my own experience working with NASA IMPACT when developing classification models. The most painful point was to wait for the SMEs to label the data which caused long delays - waiting weeks or even months before we could train or retrain a model. 
+The main problem we face in training LLMs for discriminative tasks, such as classification, is the cost of data labeling. Every data point needs manual annotation by domain experts, and that's the real bottleneck. I have personally faced this in my own experience working with NASA IMPACT when developing classification models. The most painful point was to wait for the SMEs to label the data which caused long delays - waiting weeks or even months before we could train or retrain a model.
 
 **The Traditional Solution:**
 

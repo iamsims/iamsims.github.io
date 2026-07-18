@@ -28,7 +28,7 @@ Once every block in the grid has been assigned, executed, and retired, the kerne
 
 
 
-![Pasted image 20260717171814.png](./Pasted%20image%2020260717171814.png)
+![Pasted image 20260717171814.png](/blog/Pasted%20image%2020260717171814.png)
 
 
 

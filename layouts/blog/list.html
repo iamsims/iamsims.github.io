@@ -16,9 +16,9 @@
 
 {{- $pages := .Pages.ByDate.Reverse }}
 
-<div class="blog-grid">
+<div class="blog-list">
 {{- range $pages }}
-<div class="blog-card">
+<div class="blog-item">
 <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
 <div class="blog-meta">
 <span class="date">{{ .Date.Format "January 2, 2006" }}</span>

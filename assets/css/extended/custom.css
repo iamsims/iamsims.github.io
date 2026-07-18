@@ -35,6 +35,87 @@
   margin-bottom: 2rem;
 }
 
+/* Give section headings inside a post some breathing room and a subtle
+   divider so long articles are easier to scan. */
+.post-content h2 {
+  margin-top: 2.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-content h3 {
+  margin-top: 2rem;
+}
+
+/* Make tables inside posts readable and scrollable instead of overflowing
+   or looking bare. */
+.post-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+}
+
+.post-content th,
+.post-content td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+}
+
+.post-content th {
+  background: var(--code-bg);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.post-content tr:nth-child(even) td {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+/* Table of Contents: shrink it to fit its own content instead of a
+   full-width slab, and tighten up the list spacing. */
+.toc {
+  display: inline-block;
+  max-width: 100%;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0 1.5rem;
+  margin: 1.5rem 0 2.25rem;
+}
+
+.toc summary {
+  padding: 0.85rem 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.toc .inner {
+  padding: 0 0.25rem 1.1rem 0.25rem;
+}
+
+.toc .inner ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.toc .inner li {
+  margin-bottom: 0.4rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.toc .inner li:last-child {
+  margin-bottom: 0;
+}
+
+.toc .inner ul ul {
+  margin-top: 0.4rem;
+  padding-left: 1.2rem;
+}
+
 /* --- Blog list page --- */
 
 .blog-list {
@@ -136,4 +217,5 @@
   .blog-item { padding: 1.25rem 1.5rem; }
   .blog-meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
   .blog-links { flex-direction: column; align-items: flex-start; }
+  .toc { padding: 0 1.1rem; }
 }

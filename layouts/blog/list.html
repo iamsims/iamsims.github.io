@@ -1,0 +1,44 @@
+{{- define "main" }}
+
+<header class="page-header">
+{{- partial "breadcrumbs.html" . }}
+<h1>{{ .Title }}</h1>
+{{- if .Description }}
+<div class="post-description">{{ .Description | markdownify }}</div>
+{{- end }}
+</header>
+
+{{- if .Content }}
+<div class="post-content">
+{{- partial "anchored_headings.html" .Content -}}
+</div>
+{{- end }}
+
+{{- $pages := .Pages.ByDate.Reverse }}
+
+<div class="blog-grid">
+{{- range $pages }}
+<div class="blog-card">
+<h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+<div class="blog-meta">
+<span class="date">{{ .Date.Format "January 2, 2006" }}</span>
+{{- if .Params.tags }}
+<span class="tags">{{ delimit .Params.tags " • " }}</span>
+{{- end }}
+</div>
+{{- $desc := .Params.summary }}
+{{- if not $desc }}{{ $desc = .Summary }}{{ end }}
+{{- if $desc }}
+<p class="blog-description">{{ $desc | plainify }}</p>
+{{- end }}
+<div class="blog-links">
+<a href="{{ .Permalink }}" class="read-more">Read Full Post →</a>
+{{- if .Params.paper_url }}
+<a href="{{ .Params.paper_url }}" class="external-link" target="_blank" rel="noopener">{{ .Params.paper_url_label | default "External Link" }}</a>
+{{- end }}
+</div>
+</div>
+{{- end }}
+</div>
+
+{{- end }}

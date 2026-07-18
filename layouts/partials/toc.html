@@ -1,0 +1,26 @@
+{{- /*
+  Project-level override of the theme's toc.html.
+
+  The stock PaperMod partial wraps the TOC in <details><summary>, which is a
+  native browser disclosure widget: clicking it always toggles open/closed,
+  and that collapsed state is enforced by the browser's own rendering (not
+  just a CSS display:none), so it can't be reliably forced open with CSS
+  alone. Since the TOC here is meant to be a static, always-visible sidebar/
+  block with no toggle at all, this override drops <details>/<summary>
+  entirely in favor of plain, non-interactive markup. It still relies purely
+  on Hugo's automatic heading extraction (.TableOfContents), so nothing has
+  to be hand-written per post — it's generated at build time from whatever
+  headings exist.
+*/ -}}
+{{- $headers := findRE "<h[1-6].*?>(.|\n])+?</h[1-6]>" .Content -}}
+{{- $has_headers := ge (len $headers) 1 -}}
+{{- if $has_headers -}}
+<div class="toc">
+    <div class="toc-title">
+        <span class="details">{{- i18n "toc" | default "Table of Contents" }}</span>
+    </div>
+    <div class="inner">
+        {{- .TableOfContents -}}
+    </div>
+</div>
+{{- end -}}

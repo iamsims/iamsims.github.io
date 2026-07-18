@@ -77,13 +77,14 @@
 /* Table of Contents: shrink it to fit its own content instead of a
    full-width slab, and tighten up the list spacing. */
 .toc {
-  display: inline-block;
+  display: block;
+    width: fit-content;
   max-width: 100%;
   background: var(--code-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 0 1.5rem;
-  margin: 1.5rem 0 2.25rem;
+  margin: 1.5rem auto 2.25rem;
 }
 
 .toc summary {

@@ -1,6 +1,6 @@
 ---
 title: "Projects"
-description: "A showcase of my development projects and technical work (WIP)"
+description: ""
 ---
 
 <!-- <div class="projects-intro">
@@ -11,27 +11,68 @@ description: "A showcase of my development projects and technical work (WIP)"
 <div class="projects-grid">
 
 <div class="project-card">
-<h3>Personal Portfolio Website</h3>
+<h3>CUDA Kernels Suite</h3>
 <div class="project-meta">
-<span class="status">Live</span>
-<span class="tech">Hugo • GitHub Pages • Responsive Design</span>
+<span class="status">Work in Progress</span>
+<span class="tech">CUDA C++ • Nsight Systems/Compute • PyTorch</span>
 </div>
 <p class="project-description">
-A modern, responsive portfolio website built with Hugo static site generator and deployed on GitHub Pages. Features automated deployment pipeline, 95+ Google PageSpeed score, and mobile-responsive design supporting all device sizes.
+A from-scratch suite of GPU kernels (vector add, tiled matrix multiplication, reduction, softmax, and attention) built to understand GPU performance from the hardware up. Every kernel is profiled with Nsight Systems/Compute and benchmarked head-to-head against cuBLAS and PyTorch using CUDA-event timing with warmup and median-of-many-iterations methodology.
 </p>
 <div class="project-features">
 <ul>
-<li>Automated CI/CD with GitHub Actions</li>
-<li>SEO optimized with structured data</li>
-<li>Fast loading with static site generation</li>
-<li>Responsive design for all devices</li>
+<li>Hand-written CUDA kernels with standalone <code>nvcc</code> builds and self-tests</li>
+<li>Benchmark harness plotting GFLOPS vs problem size against cuBLAS/PyTorch baselines</li>
+<li>Profiling-driven optimization: memory coalescing, shared-memory tiling, occupancy analysis</li>
+<li>In progress: full benchmark comparison table and per-kernel optimization writeups; next up: FlashAttention-style fused attention and KV caching</li>
 </ul>
 </div>
 <div class="project-links">
-<a href="/projects/web-portfolio/" class="read-more">Read More →</a>
-<a href="https://simrankc.com.np" class="live-demo" target="_blank">Live Demo →</a>
-<a href="https://github.com/iamsims/iamsims.github.io" class="source-code" target="_blank">View Source</a>
-<a href="https://gohugo.io" class="external-link" target="_blank">Hugo Docs</a>
+<a href="https://github.com/iamsims/cuda-kernels-suite" class="source-code" target="_blank">View Source</a>
+<a href="/blog/stages-of-a-program-in-cuda/" class="external-link">Related blog post →</a>
+</div>
+</div>
+
+<div class="project-card">
+<h3>Production Lifecycle Management for LLM Classifiers</h3>
+<div class="project-meta">
+<span class="status">MS Thesis</span>
+<span class="tech">Python • PyTorch • HuggingFace • EvidentlyAI</span>
+</div>
+<p class="project-description">
+An MLOps framework for keeping LLM classifiers reliable after deployment, treating the model not as a one-off artifact but as a system that must be monitored, evaluated, and retrained as the world drifts away from its training data.
+</p>
+<div class="project-features">
+<ul>
+<li>Production monitoring and data drift detection using statistical tests</li>
+<li>Active learning strategies to select the highest-value samples for relabeling</li>
+<li>Incremental fine-tuning pipelines for continuous model updates</li>
+</ul>
+</div>
+<div class="project-links">
+<a href="https://github.com/iamsims/thesis_code" class="source-code" target="_blank">View Source</a>
+<span class="coming-soon">Repo going public soon</span>
+</div>
+</div>
+
+<div class="project-card">
+<h3>RAGstoRiches: Agentic Financial RAG System</h3>
+<div class="project-meta">
+<span class="status">Live</span>
+<span class="tech">Python • FastAPI • React • Qdrant • FastMCP</span>
+</div>
+<p class="project-description">
+An agentic RAG system for financial data that lets an LLM agent combine semantic retrieval with structured SQL analysis: SQL exposed as a FastMCP tool server, Qdrant Cloud for vector search, Supabase for authentication, and Databricks-hosted Postgres.
+</p>
+<div class="project-features">
+<ul>
+<li>Agentic tool use: SQL served to the agent as a FastMCP tool server</li>
+<li>Qdrant Cloud vector database for semantic retrieval</li>
+<li>FastAPI backend with a React/TypeScript frontend, hosted on Hugging Face Spaces</li>
+</ul>
+</div>
+<div class="project-links">
+<a href="https://github.com/AwaleSajil/rags_to_riches" class="source-code" target="_blank">View Source</a>
 </div>
 </div>
 
@@ -68,27 +109,30 @@ A modern, responsive portfolio website built with Hugo static site generator and
 }
 
 .project-card h3 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1.3;
     color: var(--primary);
 }
 
 .project-meta {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
     margin-bottom: 1rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .status {
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
+    white-space: nowrap;
+    padding: 0.15rem 0.6rem;
+    border-radius: 4px;
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 
-.status:contains("Live") { background: #10b981; color: white; }
-.project-meta .status { background: var(--primary); color: white; }
+.project-meta .status { background: var(--theme-bg); color: var(--primary); border: 1px solid var(--border); }
 
 .tech {
     color: var(--secondary);

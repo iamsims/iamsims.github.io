@@ -6,6 +6,21 @@ description: "Certifications, awards, hackathon prizes, and achievements"
 <div class="others-grid">
 
 <div class="achievement-card certification">
+<div class="achievement-icon">🤖</div>
+<h3>AWS Generative AI and AI Agents with Amazon Bedrock</h3>
+<div class="achievement-meta">
+<span class="type">Certification</span>
+<span class="date">February 2026</span>
+</div>
+<p class="achievement-description">
+Professional certificate covering generative AI application development and AI agent design on AWS: Amazon Bedrock, Bedrock Agents, retrieval-augmented generation, and deploying agentic workflows on AWS infrastructure.
+</p>
+<div class="achievement-links">
+<a href="https://www.coursera.org/account/accomplishments/professional-cert/4BYJN55RXYUJ" class="external-link" target="_blank">Verify Certificate</a>
+</div>
+</div>
+
+<div class="achievement-card certification">
 <div class="achievement-icon">🚀</div>
 <h3>Machine Learning in Production</h3>
 <div class="achievement-meta">
@@ -29,10 +44,10 @@ Completed Machine Learning in Production course authorized by DeepLearning.AI an
 <span class="date">2024</span>
 </div>
 <p class="achievement-description">
-Secured 2nd place at NASA IMPACT X-athon 2024, developing a innovate solution for path finder in the building. 
+Secured 2nd place at NASA IMPACT X-athon 2024, a NASA-sponsored innovation competition, developing an indoor pathfinding solution.
 </p>
 <div class="achievement-links">
-<span class="company">NASA IMPACT</span>
+<a href="https://www.linkedin.com/feed/update/urn:li:activity:7244013580201717760/" class="external-link" target="_blank">See Announcement</a>
 </div>
 </div>
 
@@ -77,6 +92,7 @@ Served as Microsoft Learn Student Ambassador, organizing technical workshops, pr
 Completed Machine Learning certification from Stanford Online via Coursera, covering supervised learning, unsupervised learning, neural networks, and best practices in machine learning.
 </p>
 <div class="achievement-links">
+<a href="https://www.coursera.org/account/accomplishments/verify/XPCEYHDSH9CM" class="external-link" target="_blank">Verify Certificate</a>
 <a href="https://www.coursera.org/learn/machine-learning" class="external-link" target="_blank">Stanford ML Course</a>
 </div>
 </div>

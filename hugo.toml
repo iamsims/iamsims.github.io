@@ -18,11 +18,11 @@ name = "Blog"
 url = "/blog"
 weight = 20
 
-# [[menu.main]]
-# identifier = "projects"
-# name = "Projects"
-# url = "/projects"
-# weight = 30
+[[menu.main]]
+identifier = "projects"
+name = "Projects"
+url = "/projects"
+weight = 30
 
 [[menu.main]]
 identifier = "experience"
@@ -48,14 +48,14 @@ hideDescriptionInList = false
 defaultTheme = "light"
 
   [params.social]
-  email = "kcsimran296@gmail.com"
+  email = "simran.kc.official@gmail.com"
   linkedin = "https://www.linkedin.com/in/simran-kc"
   github = "https://github.com/iamsims"
 
   [params.profileMode]
   enabled = true
   title = "Simran KC"
-  subtitle = "Graduate Research Assistant at NASA IMPACT | Specializing in NLP, Large Language Models, and Backend Development with Python & FastAPI | Building scalable ML systems and human-centric AI agents"
+  subtitle = """I am passionate about **ML systems and infrastructure**. By day I build ML infra and agentic systems: multi-agent LLM workflows, production model serving, and the pipelines that keep them alive.<br><br>The rest of the time I go deep on how the big players make inference fast at scale, and how to build that kind of infrastructure myself. I build it out in my [projects](/projects) and write about what I learn on my [blog](/blog).<br><br><small>Python · C++ · CUDA · PyTorch · FastAPI · Redis · Docker · AWS · Nsight Compute/Systems</small><br><small>MS Computer Science, 4.0 GPA - University of Alabama in Huntsville, August 2026</small>"""
   imageUrl = "home/my-pic.jpg"
   imageWidth = 220
   imageHeight = 220
@@ -66,7 +66,7 @@ defaultTheme = "light"
 
   [[params.socialIcons]]
   name = "email"
-  url = "mailto:kcsimran296@gmail.com"
+  url = "mailto:simran.kc.official@gmail.com"
 
   [[params.socialIcons]]
   name = "linkedin"
@@ -78,7 +78,7 @@ defaultTheme = "light"
 
   [[params.socialIcons]]
   name = "cv"
-  url = "https://drive.google.com/file/d/1pUlW4q67wya4pXry4HY8qF-knjB7dkSG/view?usp=sharing"
+  url = "/resume.pdf"
 
   [params.fuseOpts]
   isCaseSensitive = false

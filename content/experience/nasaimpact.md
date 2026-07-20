@@ -3,7 +3,7 @@ title: "Graduate Research Assistant"
 description: "NASA IMPACT"
 dateString: August 2024 - Present
 draft: false
-tags: ["Python", "FastAPI", "NLP", "LLMs", "RoBERTa", "Redis", "Pytest"]
+tags: ["Python", "FastAPI", "Model Serving", "LLM Agents", "MCP", "RAG", "Redis", "PyTorch"]
 showToc: false
 weight: 301
 unlisted: true
@@ -14,29 +14,31 @@ build:
 
 ## Role Overview
 
-Contributing to NASA's Accelerated Knowledge Discovery project, developing a deep research LLM agent enhanced with human-in-the-loop guidance for scientific exploration.
+Contributing to NASA's Accelerated Knowledge Discovery project, building the model-serving infrastructure and ML pipelines behind a deep research LLM agent with human-in-the-loop guidance for scientific exploration.
 
 ## Key Achievements
 
-- **ML Pipeline Development**: Fine-tuned and integrated FastText and RoBERTa classifiers on large scientific text corpora to implement a multi-model automated tagging pipeline and relevancy-checking classifier for scraped documents, reducing manual curation time by 95%
+- **Multi-Model Inference Service**: Owned end-to-end design and deployment of a scalable inference service in Python and FastAPI, serving multiple ML models through a single endpoint with dynamic resource management; Redis-based distributed task queuing reduced API response latency by 40%
 
-- **Integration with NASA Systems**: Integrated models into NASA's Science Discovery Engine to enable ML-assisted content curation workflows
+- **Guardrails System**: Designed a two-level guardrails system (IBM Granite Guardian served via local Ollama inference as a first-pass filter, followed by a dynamic Risk Agent), achieving ~80% cost reduction over single-model approaches
 
-- **Scalable Inference Pipeline**: Developed a scalable inference pipeline in Python and FastAPI to serve multiple models through a single API in a resource-constrained environment
+- **Model Fine-Tuning & Evaluation**: Fine-tuned and evaluated classifiers (Indus, ModernBERT, BERT, FastText) on large scientific corpora, reaching 98% precision on multi-label division tagging and 96% recall on single-label indexing, with conformal prediction (α = 0.05) confidence filtering to reduce false negatives across temporally separated validation sets
 
-- **Distributed Processing**: Implemented a Redis-backed queue for batch processing, with loosely coupled distributed workers that dynamically load and unload models to optimize resources and scale horizontally
+- **Agentic AI**: Architected multi-agent workflows for NASA's Deep Research Agent, including LLM orchestration, multi-rubric evaluation, self-analysis for autonomous research synthesis, and RAG-based agents for code, data, and gap search; built MCP tools and servers with FastMCP exposing NASA's Science Discovery Engine
 
-- **Testing & Quality**: Added Pytest unit and integration tests to improve reliability and maintainability
+- **Agent Evaluation**: Designed benchmark evaluations for agent architectures using synthetic datasets and A/B testing across configurations (tools, web search, refined prompts), and benchmarked IBM Granite Guardian models against dynamically generated risk criteria
+
+- **Data Pipelines**: Built production data pipelines with custom web resolvers and scrapers, improving data acquisition throughput by 3x
 
 ## Technologies Used
 
 - **Languages**: Python
-- **Frameworks**: FastAPI, TensorFlow/PyTorch
-- **ML/NLP**: RoBERTa, FastText, Hugging Face Transformers
+- **Frameworks**: FastAPI, PyTorch, Hugging Face Transformers
+- **ML/NLP**: Indus, ModernBERT, BERT, FastText, Conformal Prediction, Active Learning
+- **GenAI**: MCP, FastMCP, Ollama, OpenAI Agent SDK, RAG
 - **Infrastructure**: Redis, Docker
-- **Testing**: Pytest
-- **Domains**: Natural Language Processing, Large Language Models, Scientific Text Analysis
+- **Domains**: Model Serving, LLM Agents, Scientific Text Analysis
 
 ## Impact
 
-Reduced manual data curation time by 95% through automated ML pipelines, enabling NASA scientists to focus on research rather than data management. Built scalable infrastructure that can handle large volumes of scientific documents while optimizing resource usage in constrained environments.
+Cut inference API latency by 40% and guardrails cost by ~80% while serving multiple models under tight resource constraints. Automated classification pipelines (98% precision / 96% recall) freed NASA scientists from manual curation, and the Deep Research Agent infrastructure now powers autonomous scientific knowledge discovery.

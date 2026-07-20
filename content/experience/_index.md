@@ -1,6 +1,6 @@
 ---
 title: "Professional Experience"
-description: "My professional journey and career milestones in software development"
+description: "My professional journey across ML systems, agentic AI, and production systems"
 ---
 
 <!-- <div class="experience-intro">
@@ -20,26 +20,30 @@ description: "My professional journey and career milestones in software developm
 </div>
 <span class="status current-role">Current Role</span>
 <p class="experience-description">
-Contributing to NASA's Accelerated Knowledge Discovery project, developing a deep research LLM agent enhanced with human-in-the-loop guidance for scientific exploration.
+Contributing to NASA's Accelerated Knowledge Discovery project, building the model-serving infrastructure and ML pipelines behind a deep research LLM agent with human-in-the-loop guidance for scientific exploration.
 </p>
 <div class="achievements">
 <h4>Key Achievements:</h4>
 <ul>
-<li>Fine-tuned and integrated FastText and RoBERTa classifiers on large scientific text corpora to implement a multi-model automated tagging pipeline and relevancy-checking classifier for scraped documents, reducing manual curation time by 95%</li>
-<li>Integrated models into NASA's Science Discovery Engine to enable ML-assisted content curation workflows</li>
-<li>Developed a scalable inference pipeline in Python and FastAPI to serve multiple models through a single API in a resource-constrained environment</li>
-<li>Implemented a Redis-backed queue for batch processing, with loosely coupled distributed workers that dynamically load and unload models to optimize resources and scale horizontally</li>
-<li>Added Pytest unit and integration tests to improve reliability and maintainability</li>
+<li>Owned end-to-end design and deployment of a scalable multi-model inference service in Python and FastAPI, serving multiple ML models through a single endpoint with dynamic resource management; Redis-based distributed task queuing reduced API response latency by 40%</li>
+<li>Designed a two-level guardrails system (IBM Granite Guardian served via local Ollama inference as a first-pass filter, followed by a dynamic Risk Agent), achieving ~80% cost reduction over single-model approaches</li>
+<li>Fine-tuned and evaluated classifiers (Indus, ModernBERT, BERT, FastText) on large scientific corpora, reaching 98% precision on multi-label division tagging and 96% recall on single-label indexing, with conformal prediction (α = 0.05) confidence filtering to reduce false negatives</li>
+<li>Architected multi-agent workflows for NASA's Deep Research Agent (LLM orchestration, multi-rubric evaluation, and RAG-based agents for code, data, and gap search) and built MCP tools and servers with FastMCP exposing NASA's Science Discovery Engine</li>
+<li>Designed benchmark evaluations for agent architectures using synthetic datasets and A/B testing across configurations (tools, web search, refined prompts), and benchmarked IBM Granite Guardian models against dynamically generated risk criteria</li>
+<li>Built production data pipelines with custom web resolvers and scrapers, improving data acquisition throughput by 3x</li>
 </ul>
 </div>
 <div class="tech-stack">
 <span class="tech-tag">Python</span>
 <span class="tech-tag">FastAPI</span>
-<span class="tech-tag">NLP</span>
-<span class="tech-tag">LLMs</span>
-<span class="tech-tag">RoBERTa</span>
+<span class="tech-tag">Model Serving</span>
+<span class="tech-tag">Distributed Systems</span>
 <span class="tech-tag">Redis</span>
-<span class="tech-tag">Pytest</span>
+<span class="tech-tag">Ollama</span>
+<span class="tech-tag">LLM Agents</span>
+<span class="tech-tag">MCP</span>
+<span class="tech-tag">RAG</span>
+<span class="tech-tag">PyTorch</span>
 </div>
 <div class="experience-links">
 <a href="https://impact.earthdata.nasa.gov" class="company-link" target="_blank">NASA IMPACT</a>
@@ -48,33 +52,36 @@ Contributing to NASA's Accelerated Knowledge Discovery project, developing a dee
 
 <div class="experience-card">
 <div class="experience-header">
-<h3>Python Developer (ML)</h3>
+<h3>Machine Learning Engineer</h3>
 <div class="company-info">
-<span class="company">Mutual Art</span>
+<span class="company">MutualArt</span>
 <span class="duration">September 2023 - June 2024</span>
 </div>
 </div>
 <p class="experience-description">
-Developed ML-powered features and optimized backend systems for art market intelligence platform serving thousands of users.
+Built GPU-backed inference services and ML-powered features for an art market intelligence platform serving thousands of users.
 </p>
 <div class="achievements">
 <h4>Key Achievements:</h4>
 <ul>
-<li>Built a FAISS-based vector database for reverse image search to enable similarity retrieval using an ensemble of pHash and CNN embeddings</li>
-<li>Developed and deployed the backend and data pipeline for the "Repeated Sales of Artworks" feature which resulted in a 200% increase in customer convergence rates</li>
-<li>Optimized the core near-duplicate image detection algorithm by implementing parallelization, caching, efficient SQL queries, and strategic performance tuning, reducing runtime by 75%</li>
-<li>Collaborated with cross-functional teams to troubleshoot, diagnose, and resolve code issues and bugs</li>
+<li>Fine-tuned IDEFICS-2, an 8B vision-language model, with LoRA (rank-16, ~20M trainable parameters, 0.25% of total) and 4-bit NF4 quantization via BitsAndBytes with flash attention, reducing VRAM requirements by ~75% while maintaining accuracy</li>
+<li>Developed a production microservice on GPU servers consuming AWS SQS events for automated description generation and validation with BLIP Image-Text Matching, improving content discoverability by 80% while maintaining 99.5% uptime</li>
+<li>Engineered a multimodal embedding pipeline fusing text, categorical, and numerical features into unified 424-dim vectors; deployed as containerized services on AWS ECS/Fargate processing 80,000+ artworks weekly, with Qdrant ANN retrieval and OpenSearch scoring combined via Reciprocal Rank Fusion for real-time recommendations</li>
+<li>Built a parallel image-processing pipeline for artwork duplicate detection using two-stage ORB + SSIM matching with Union-Find grouping, improving customer conversion by 200%</li>
+<li>Separated the lightweight recommendation service (Qdrant and OpenSearch lookups) from the compute-heavy embedding service (Sentence Transformer inference) for independent scaling and cost efficiency</li>
 </ul>
 </div>
 <div class="tech-stack">
-<span class="tech-tag">Python</span>
-<span class="tech-tag">FAISS</span>
+<span class="tech-tag">PyTorch</span>
+<span class="tech-tag">LoRA</span>
+<span class="tech-tag">Quantization</span>
+<span class="tech-tag">GPU Inference</span>
+<span class="tech-tag">AWS ECS/SQS</span>
+<span class="tech-tag">Qdrant</span>
 <span class="tech-tag">Computer Vision</span>
-<span class="tech-tag">SQL</span>
-<span class="tech-tag">CNN</span>
 </div>
 <div class="experience-links">
-<a href="https://www.mutualart.com" class="company-link" target="_blank">Mutual Art</a>
+<a href="https://www.mutualart.com" class="company-link" target="_blank">MutualArt</a>
 </div>
 </div>
 
@@ -92,10 +99,11 @@ Developed KuberIDE, a web-based IDE for Cardano developers within a microservice
 <div class="achievements">
 <h4>Key Achievements:</h4>
 <ul>
-<li>Developed KuberIDE web-based IDE (ReactJS, FastAPI) within a microservices architecture</li>
-<li>Designed and implemented backend authentication, access management, and session handling using OAuth cookies for browser-based access and API keys for direct access</li>
-<li>Built an HTTPS gateway to enable access to in-house microservices and WebSocket proxy to provide IntelliSense in the online IDE for Haskell using the Haskell Language Server</li>
-<li>Optimized deployment by implementing Pytest-based testing, Dockerfiles, and CI/CD pipelines, improving system reliability, scalability, and continuous integration workflows</li>
+<li>Led development of KuberIDE, a web-based IDE (ReactJS, FastAPI) within a microservices architecture serving 500+ developers, reducing environment setup time from hours to minutes</li>
+<li>Designed and implemented backend authentication, access management, and session handling using OAuth 2.0 cookies for browser-based access and API keys for secure multi-tenant direct access</li>
+<li>Built an HTTPS gateway to in-house microservices and a WebSocket proxy providing real-time Haskell IntelliSense via the Haskell Language Server, increasing platform adoption by 300%</li>
+<li>Optimized deployment with Docker multi-stage builds (40% image size reduction), Pytest automated testing (80% coverage), and GitHub Actions CI/CD pipelines</li>
+<li>Mentored 2 junior developers on API design patterns and testing best practices through code reviews and pair programming</li>
 </ul>
 </div>
 <div class="tech-stack">
@@ -127,9 +135,8 @@ Focused on Linux system administration, performance optimization, and automation
 <div class="achievements">
 <h4>Key Achievements:</h4>
 <ul>
-<li>Monitored Linux systems, optimizing performance and reliability</li>
-<li>Automated routine tasks and boosted operational efficiency with shell scripting</li>
-<li>Resolved critical system incidents using advanced Linux troubleshooting techniques</li>
+<li>Diagnosed and resolved critical incidents on enterprise Linux systems, monitoring and tuning for performance and reliability</li>
+<li>Automated recurring operations with shell scripting, reducing manual intervention across the infrastructure</li>
 </ul>
 </div>
 <div class="tech-stack">
@@ -140,37 +147,6 @@ Focused on Linux system administration, performance optimization, and automation
 </div>
 <div class="experience-links">
 <a href="https://www.logpoint.com" class="company-link" target="_blank">Logpoint</a>
-</div>
-</div>
-
-<div class="experience-card">
-<div class="experience-header">
-<h3>Software Engineer Intern</h3>
-<div class="company-info">
-<span class="company">Leapfrog Technology</span>
-<span class="duration">April 2021 - May 2021</span>
-</div>
-</div>
-<span class="status internship">Internship</span>
-<p class="experience-description">
-Short-term intensive internship focusing on JavaScript development and algorithmic problem-solving. Enhanced both frontend and backend skills while working on practical projects.
-</p>
-<div class="achievements">
-<h4>Key Achievements:</h4>
-<ul>
-<li>Enhanced frontend and backend JavaScript skills with focus on efficient problem-solving</li>
-<li>Developed a Pacman game showcasing algorithm design and software development skills</li>
-<li>Practiced optimized coding techniques and software engineering best practices</li>
-</ul>
-</div>
-<div class="tech-stack">
-<span class="tech-tag">JavaScript</span>
-<span class="tech-tag">Frontend Development</span>
-<span class="tech-tag">Backend Development</span>
-<span class="tech-tag">Game Development</span>
-</div>
-<div class="experience-links">
-<a href="https://www.lftechnology.com" class="company-link" target="_blank">Leapfrog Technology</a>
 </div>
 </div>
 
@@ -189,10 +165,8 @@ Research internship focused on Computer Vision and AI model development. Worked 
 <div class="achievements">
 <h4>Key Achievements:</h4>
 <ul>
-<li>Engaged in extensive research and implementation of state-of-the-art Computer Vision models</li>
-<li>Utilized OpenCV, PyTorch, and scikit-learn for model building and fine-tuning</li>
-<li>Collaborated with lead researchers on CV applications and innovative improvements</li>
-<li>Contributed to projects involving object detection, facial recognition, and image segmentation</li>
+<li>Built and fine-tuned computer vision models for object detection, facial recognition, and image segmentation using PyTorch, OpenCV, and scikit-learn</li>
+<li>Collaborated with lead researchers to implement and improve state-of-the-art CV models across active research projects</li>
 </ul>
 </div>
 <div class="tech-stack">
